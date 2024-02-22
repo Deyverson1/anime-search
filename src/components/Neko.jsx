@@ -1,28 +1,17 @@
-import { useEffect, useState } from "react"
-
+import SearchNeko from "./SearchNeko"
 export default function NekoPict() {
-  const [response, setResponse] = useState([])
-
-  // useEffect(() => {
-  //   fetch('https://nekos.best/api/v2/waifu?amount=20')
-  //     .then(response => response.json())
-  //     .then(res => {
-  //       const data = res.results.map((dato) => ({
-  //         image: dato.url,
-  //         artist: dato.artist_href,
-  //         artistName: dato.artist_name
-  //       }))
-  //       setResponse(data)
-  //     })
-  //     .catch(error => console.error('New error in fetch NekoPic', error))
-
-  // }, [])
-  console.log(response)
   return (
-    <article className="flex flex-wrap">
-      {response.map((data, index) => (
-      <img key={index} src={data.image} className="h-56 w-56"/>
-    ))}
-    </article>
+    <section className="px-2 py-8 lg:px-40">
+      <h1 className="pl-12 pt-12 text-xl font-bold">Art:</h1>
+      <main className="flex gap-x-8">
+        <div className="py-8">
+          <SearchNeko category={'waifu'} title={'Waifu'}  amount={'4'} />
+        </div>
+        <div className="py-8">
+        <SearchNeko category={'neko'} title={'Neko'} amount={'4'} />
+        </div>
+      </main>
+      <SearchNeko category={'kitsune'} title={'Kitsune'} amount={'4'}/>
+    </section>
   )
 }
