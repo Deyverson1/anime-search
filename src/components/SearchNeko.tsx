@@ -1,15 +1,29 @@
+import React from "react"
 import { useEffect, useState } from "react"
 import { Heart } from "../icons/Heart"
 import { FilledHeart } from "../icons/FilledHeart"
 
-export default function SearchNeko({category, amount, title}){
-  const [response, setResponse] = useState([])
+interface SearchNekoProps {
+  category: string,
+  amount: number,
+  title: string,
+}
+
+interface Response {
+  title: string,
+  image: string,
+  liked?: boolean
+}
+
+export default function SearchNeko({category, amount, title}: SearchNekoProps){
+
+  const [response, setResponse] = useState<Response | null>(null)
 
   useEffect(() => {
     fetch(`https://nekos.best/api/v2/${category}?amount=${amount}`)
       .then(response => response.json())
       .then(res => {
-        const data = res.results.map((dato) => ({
+        const data = res.results.map((dato: {url: string, artist_href: string, artist_name: string}) => ({
           image: dato.url,
           artist: dato.artist_href,
           artistName: dato.artist_name
@@ -19,9 +33,12 @@ export default function SearchNeko({category, amount, title}){
       .catch(error => console.error('New error in fetch NekoPic', error))
   }, [])
 
-  function handleLike(index) {
+  function handleLike(index: number) {
     setResponse(prevResponse => {
-      const updatedResponse = [...prevResponse];
+      if(prevResponse === null){
+        return null
+      }
+      const updatedResponse: Response[] = [...prevResponse];
       updatedResponse[index] = {
         ...updatedResponse[index],
         liked: !updatedResponse[index].liked
@@ -34,7 +51,7 @@ export default function SearchNeko({category, amount, title}){
     <main className="">
       <h1 className="text-center text-xl font-bold pb-4">{title}</h1>
       <section className="flex gap-x-2 gap-y-8 justify-center flex-wrap">
-        {response.map((data, index) => (
+        {Array.isArray(response) && response !== null && response.length > 0 && response.map((data: {image: string, artistName: string, artist: string, liked: string}, index) => (
           <article key={index} className=" rounded-lg hover:bg-[#1a1a1a]" style={{ backgroundColor: '' }}>
             <div className="p-2"><img src={data.image} className="h-56 rounded-lg w-56" /></div>
             <div className="px-2 text-center">

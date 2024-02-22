@@ -1,30 +1,31 @@
-// import { useState } from "react"
+import React from "react";
 import { useRef } from "react"
-import { Link } from "react-router-dom";
-import Recommend from "./Recommend";
-// import { Github } from "../icons/Github"
-export default function Home({ setData }) {
-  const input = useRef();
-  function handleClick(e) {
+
+interface HomeProps {
+  setData: any,
+}
+
+export default function Home({ setData }: HomeProps) {
+  const input = useRef<HTMLInputElement>(null);
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
-    const value = input.current.value;
-    const API = `https://api.jikan.moe/v4/anime?q=${value}&sfw`;
-    fetch(API)
-      .then(response => response.json())
-      .then(data => {
-        const animeData = data.data.map(anime => ({
-          title: anime.title,
-          url: anime.url,
-          imageUrl: anime.images.jpg.image_url
-        }));
-        setData(animeData);
-      })
-      .catch(error => console.error('Error fetching data:', error));
+    if (input.current && input.current.value.trim() !== "") {
+      const value = input.current.value;
+      const API = `https://api.jikan.moe/v4/anime?q=${value}&sfw`;
+      fetch(API)
+        .then(response => response.json())
+        .then(data => {
+          const animeData = data.data.map((anime: { title: string, url: string, images: any }) => ({
+            title: anime.title,
+            url: anime.url,
+            imageUrl: anime.images.jpg.image_url
+          }));
+          setData(animeData);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
   }
-  // https://images5.alphacoders.com/133/1339874.png
-  // style={{
-  // backgroundImage: 'url("https://a-static.besthdwallpaper.com/mikasa-ackerman-4-wallpaper-1920x1080-83559_48.jpg")',
-  // backgroundSize: '210vh 100vh'}}
   return (
     <>
       <section className="flex flex-col top-0 w-full bg bg-cover"

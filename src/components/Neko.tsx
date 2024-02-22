@@ -1,4 +1,6 @@
+import React from "react"
 import SearchNeko from "./SearchNeko"
+
 export default function NekoPict() {
   return (
     <section className="px-2 py-8 lg:px-40">

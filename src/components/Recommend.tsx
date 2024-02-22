@@ -1,3 +1,4 @@
+import React from "react";
 import { dataBase } from "../database/database";
 function Recommend() {
   return (
