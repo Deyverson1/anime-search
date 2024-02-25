@@ -7,6 +7,7 @@ import NekoPict from "./components/Neko"
 import AnimeDetails from "./components/AnimeDetails"
 import { useState } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { useParams } from "react-router-dom" 
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -14,7 +15,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<><Home setData={setData} /> <AnimeResults data={data} /> <Recommend /> <NekoPict /> <Character /></>} />
-        <Route path="/anime" element={<><AnimeDetails data={data}/></>}/>
+        <Route path={`/anime/:id`} element={<><AnimeDetails data={data}/></>}/>
       </Routes>
     </Router>
   )

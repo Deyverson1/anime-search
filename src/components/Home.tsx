@@ -16,10 +16,11 @@ export default function Home({ setData }: HomeProps) {
         .then(response => response.json())
         .then(data => {
           console.log(data.data)
-          const animeData = data.data.map((anime: { title: string, url: string, images: any }) => ({
+          const animeData = data.data.map((anime: { title: string, url: string, images: any, mal_id: number }) => ({
             title: anime.title,
             url: anime.url,
-            imageUrl: anime.images.jpg.image_url
+            imageUrl: anime.images.jpg.image_url,
+            id: anime.mal_id
           }));
           setData(animeData);
         })
