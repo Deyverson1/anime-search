@@ -15,6 +15,7 @@ export default function Home({ setData }: HomeProps) {
       fetch(API)
         .then(response => response.json())
         .then(data => {
+          console.log(data.data)
           const animeData = data.data.map((anime: { title: string, url: string, images: any }) => ({
             title: anime.title,
             url: anime.url,
@@ -28,7 +29,7 @@ export default function Home({ setData }: HomeProps) {
   }
   return (
     <>
-      <section className="flex flex-col top-0 w-full bg bg-cover"
+      <section className="flex flex-col top-0 w-full bg-cover"
       >
         <header className="w-full flex flex-col pt-8 items-center">
           <form className="w-8/12 pb-4">

@@ -51,7 +51,7 @@ export default function Character() {
         </div>
       </header>
       {quote !== null && response !== null && Array.isArray(response) && response.length > 0 && (
-        <section className="flex justify-center gap-x-8">
+        <section className="flex flex-wrap justify-center gap-x-8">
           <div>
             <h1 className="text-xl font-bold">{quote.character}</h1>
             <h2 className="text-yellow-600">{quote.anime}</h2>
