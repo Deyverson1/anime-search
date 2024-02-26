@@ -27,16 +27,16 @@ export default function AnimeDetails({ data }: AnimeDetailsProps) {
         setContent(detailsData)
       })
       .catch(error => console.error('Error fetching AnimeDetails', error))
-  }, [])
+  }, [id])
   return (
-    <section >
+    <section  className="pb-8">
       <NavDetails />
       {content.map(({ type, title, titles, synopsis, image, status, genres, trailer, rank, rating, popularity, favorites, members, score, scored_by, background, streaming, year, source, episodes, external, duration, producers }, index) => (
-        <article key={index} className="flex gap-x-10 flex-wrap lg:flex-nowrap" >
+        <article key={index} className="flex gap-x-10 justify-center flex-wrap lg:flex-nowrap" >
           <Poster rating={rating} duration={duration} episodes={episodes} titles={titles} image={image} status={status} year={year} />
-          <section className=" bottom-0">
-            <div className="mt-80 gap-4 flex items-center">
-              <h1 className="text-2xl">{title}</h1>
+          <section className="flex flex-col items-center lg:block bottom-0">
+            <div className="mt-8 lg:mt-60 gap-4 flex items-center">
+              <h1 className="text-2xl max-w-md">{title}</h1>
               <h2 className="bg-orange-500 px-4 rounded-md">{type}</h2>
               <h3 className="bg-pink-500 px-4 rounded-md">{source}</h3>
               <h4 className="bg-white text-black px-4 rounded-md">Episodes: {episodes}</h4>

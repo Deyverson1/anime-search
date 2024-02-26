@@ -10,7 +10,7 @@ interface InfoProps{
 
 export default function Info({year, titles, episodes, duration, rating}: InfoProps){
   return(
-    <>
+    <section className="max-w-64">
     <h1 className="pt-4">Information:</h1>
     <h1>Rating: {rating}</h1>
     <h1>Year: {year}</h1>
@@ -22,6 +22,6 @@ export default function Info({year, titles, episodes, duration, rating}: InfoPro
         <p><strong>{dato.type}</strong>: {dato.title}</p>
       </article>
     ))}
-    </>
+    </section>
   )
 }

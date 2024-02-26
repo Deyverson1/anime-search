@@ -3,7 +3,7 @@ import { dataBase } from "../database/database";
 import { Link } from "react-router-dom";
 function Recommend() {
   return (
-    <section className="px-2 py-8 lg:px-36">
+    <section className="px-2 py-8 lg:px-24">
       <h1 className="text-xl font-bold pb-4">Recommended:</h1>
       <section className="flex flex-wrap  flex-1 gap-y-16 gap-x-8">
     {

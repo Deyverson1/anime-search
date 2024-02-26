@@ -17,10 +17,10 @@ export default function Rank({ rank, popularity, members, score, scored_by, favo
         <p className="text-sm text-center">{scored_by.toLocaleString('en-US')} users</p>
       </div>
       <div className="flex gap-x-2 gap-y-2 flex-wrap">
-        <p className="bg-blue-600 px-4 text-md rounded-sm">Ranked #<strong>{rank}</strong></p>
-        <p className="bg-yellow-600 px-4 text-md rounded-sm">Popularity #<strong>{popularity}</strong></p>
-        <p className="bg-green-600 px-4 text-md rounded-sm">Members <strong> {members.toLocaleString('en-US')}</strong></p>
-        <p className="bg-red-600 px-4 text-md rounded-sm">Favorties {favorites.toLocaleString('en-US')}</p>
+        <p className="bg-blue-600 px-3 text-md rounded-sm">Ranked #<strong>{rank}</strong></p>
+        <p className="bg-yellow-600 px-3 text-md rounded-sm">Popularity #<strong>{popularity}</strong></p>
+        <p className="bg-green-600 px-3 text-md rounded-sm">Members <strong> {members.toLocaleString('en-US')}</strong></p>
+        <p className="bg-red-600 px-3 text-md rounded-sm">Favorties {favorites.toLocaleString('en-US')}</p>
       </div>
     </section>
   )
