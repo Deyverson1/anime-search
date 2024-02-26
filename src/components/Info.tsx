@@ -18,7 +18,7 @@ export default function Info({year, titles, episodes, duration, rating}: InfoPro
     <h2>Duration: {duration}</h2>
     <h3>Titles: </h3>
     {titles.map(( dato: {type: string, title: string}, index: number) => (
-      <article>
+      <article key={index}>
         <p><strong>{dato.type}</strong>: {dato.title}</p>
       </article>
     ))}
