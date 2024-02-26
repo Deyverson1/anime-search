@@ -7,7 +7,7 @@ import NekoPict from "./components/Neko"
 import AnimeDetails from "./components/AnimeDetails"
 import { useState } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { useParams } from "react-router-dom" 
+import '@fontsource-variable/onest';
 
 export default function App() {
   const [data, setData] = useState([]);

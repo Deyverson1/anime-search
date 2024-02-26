@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function Recommend() {
   return (
     <section className="px-2 py-8 lg:px-24">
-      <h1 className="text-xl font-bold pb-4">Recommended:</h1>
-      <section className="flex flex-wrap  flex-1 gap-y-16 gap-x-8">
+      <h1 className="text-xl pl-16 font-bold pb-4">Recommended:</h1>
+      <section className="flex flex-wrap justify-center  flex-1 gap-y-16 gap-x-8">
     {
       dataBase.map(({ title, image, subTitle, id }) => (
        <Link key={title} to={`/anime/${id}`}>

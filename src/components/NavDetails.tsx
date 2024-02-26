@@ -2,16 +2,20 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { HomeIcon } from "../icons/HomeIcon";
 
+interface Response {
+  imageUrl: string, title: string, id: number
+}
+
 export default function NavDetails() {
-  const [responseFetch, setResponseFetch] = useState(null)
-  const [value, setValueInput] = useState()
+  const [responseFetch, setResponseFetch] = useState<Response[]>([])
+  const [value, setValueInput] = useState<string>()
   const inputChange = useRef<HTMLInputElement>(null)
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault()
     const inputValue = inputChange.current?.value
     setValueInput(inputValue)
     const API = `https://api.jikan.moe/v4/anime?q=${inputValue}&sfw`
-    if (inputChange && inputChange.current.value.trim() !== "" && inputValue !== null && inputValue?.length > 3) {
+    if (inputChange.current && inputChange.current.value.trim() !== "" && inputValue !== undefined && inputValue?.length >= 3) {
       fetch(API)
         .then(res => res.json())
         .then(res => {
@@ -26,8 +30,8 @@ export default function NavDetails() {
         )
     }
   }
-  function handleCleanInput(){
-    setResponseFetch(null)
+  function handleCleanInput() {
+    setResponseFetch([])
     setValueInput('')
   }
   return (
