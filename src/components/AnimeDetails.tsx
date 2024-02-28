@@ -35,7 +35,7 @@ export default function AnimeDetails({ data }: AnimeDetailsProps) {
         <article key={index} className="flex gap-x-10 justify-center flex-wrap lg:flex-nowrap" >
           <Poster rating={rating} duration={duration} episodes={episodes} titles={titles} image={image} status={status} year={year} />
           <section className="flex flex-col px-2 items-center lg:block bottom-0">
-            <div className="mt-8 lg:mt-60 gap-4 flex items-center">
+            <div className="mt-8 lg:mt-60 gap-4 flex flex-wrap  items-center">
               <h1 className="text-2xl max-w-md">{title}</h1>
               <h2 className="bg-orange-500 px-4 rounded-md">{type}</h2>
               <h3 className="bg-pink-500 px-4 rounded-md">{source}</h3>

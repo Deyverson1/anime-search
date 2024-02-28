@@ -14,12 +14,10 @@ interface PosterProps{
 }
 
 export default function Poster({titles, image, status, year, episodes, duration, rating}: PosterProps){
-  console.log(year)
-
   return(
-    <main className="z-10 pt-20 lg:pl-40">
+    <main className=" pt-20 lg:pl-40">
     <div className="rounded-md p-1 bg-white w-64">
-      <img src={image} alt={`Image from ${titles}`} className="rounded-md w-64" />
+      <img src={image} alt={`Image from ${titles}`} className="rounded-md w-64 aspect-auto" />
     </div>
     <p className="my-4 text-center py-2 rounded-md bg-red-600 uppercase">{status}</p>
     <section className="flex justify-between gap-x-4 box-border flex-1 w-64">

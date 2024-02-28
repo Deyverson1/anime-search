@@ -19,7 +19,7 @@ export default function PrincipalCard({ favorites, rank, popularity, members, sc
         {trailer !== null && (
           <iframe
             title="YouTube Video Player"
-            // className="w-4/6 h-full"
+            className="aspect-video"
 
             // width="360"
             // height="215"
