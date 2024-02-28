@@ -16,3 +16,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media screen and (min-width: 300px) {
+  iframe {
+    width: 360px; 
+    height: 215px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  iframe {
+    width: 560px;
+    height: 315px;
+  }
+}

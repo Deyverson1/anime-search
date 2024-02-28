@@ -6,21 +6,23 @@ interface PrincipalCard {
 }
 export default function PrincipalCard({ favorites, rank, popularity, members, score, genres, synopsis, trailer, background, streaming, producers, scored_by, external }: PrincipalCard) {
   return (
-    <section className=" p-4 bg-neutral-900 rounded-lg w-10/12 min-x-10/12 mt-6 mr- z-1 text-white">
+    <section className="p-1 lg:p-4 bg-neutral-900 rounded-lg w-full lg:w-10/12 min-x-10/12 mt-6 mr- z-1 text-white">
       <Rank favorites={favorites} rank={rank} popularity={popularity} members={members} score={score} scored_by={scored_by} />
       <h1 className="border-b-2 text-md uppercase border-gray-500 mb-4">Synopsis:</h1>
-      <div className="flex gap-2 my-4">
+      <div className="flex flex-wrap lg:flex-nowrap gap-2 my-4">
         {genres.map((date: { name: string }, index: number) => (
           <p key={index} className="rounded-full bg-neutral-700 px-4 hover:bg-neutral-600 cursor-pointer">{date.name}</p>
         ))}
       </div>
       <p className="w-full text-sm">{synopsis}</p>
-      <div className="flex justify-center py-8">
+      <div className="flex justify-center py-8 w-full">
         {trailer !== null && (
           <iframe
             title="YouTube Video Player"
-            width="560"
-            height="315"
+            // className="w-4/6 h-full"
+
+            // width="360"
+            // height="215"
             src={`${trailer}?autoplay=0`}
             frameBorder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
