@@ -2,9 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { HomeIcon } from "../icons/HomeIcon";
 
-interface Response {
-  imageUrl: string, title: string, id: number
-}
+interface Response { imageUrl: string, title: string, id: number }
 
 export default function NavDetails() {
   const [responseFetch, setResponseFetch] = useState<Response[]>([])
@@ -41,7 +39,7 @@ export default function NavDetails() {
           <HomeIcon />
         </Link>
       </nav>
-      <section className="flex flex-col pr-8 top-0 w-full bg-cover justify-center items-center"
+      <section className="flex flex-col pr-8 top-0 w-full bg-cover justify-center items-center lg:items-stretch "
       >
         <header className=" flex flex-col pt-8 items-center">
           <form className="w-full lg:w-6/12 pb-4">
@@ -57,27 +55,29 @@ export default function NavDetails() {
           </form>
         </header>
         <section className="absolute z-1 top-24 lg:right-72 justify-end w-7/12 lg:w-5/12">
-          <main className=" absolute px-2 z-10  bg-neutral-900 lg:right-20 flex-col items-center w-12/12  gap-x-2 py-2 lg:gap-x-4 overflow-y-scroll max-h-56   ">
-            {responseFetch !== null && responseFetch.map((dato: { imageUrl: string, title: string, id: number }, index: number) => (
-              <Link key={index} to={`/anime/${dato.id}`}>
-                <article onClick={handleCleanInput} className="flex over gap-1 flex-1 md:gap-x-10  space-x-0 lg:space-y-4 group md:space-y-0 lg:h-12 max-w-full">
-                  <div className=" flex flex-col  col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-lg sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-                    <img
-                      className="object-cover object-top min-w-12 max-w-12 min-h-12 max-h-12 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-                      src={dato.imageUrl}
-                      alt=""
-                    />
-                  </div>
-                  <div className="hidden lg:block">
-                    <p className="text-xs font-bold">{dato.title.length < 60 ? dato.title : dato.title.slice(0, 60) + '...'}</p>
-                  </div>
-                  <div className="block lg:hidden">
-                  <p className="text-xs font-bold">{dato.title.length < 30 ? dato.title : dato.title.slice(0, 30) + '...'}</p>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </main>
+         {responseFetch && value != '' && value != undefined && (
+           <main className=" absolute px-2 z-10  bg-neutral-900 lg:right-20 flex-col items-center w-12/12  gap-x-2 py-2 lg:gap-x-4 overflow-y-scroll max-h-56   ">
+           {responseFetch !== null && responseFetch.map((dato: { imageUrl: string, title: string, id: number }, index: number) => (
+             <Link key={index} to={`/anime/${dato.id}`}>
+               <article onClick={handleCleanInput} className="flex over gap-1 flex-1 md:gap-x-10  space-x-0 lg:space-y-4 group md:space-y-0 lg:h-12 max-w-full">
+                 <div className=" flex flex-col  col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-lg sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                   <img
+                     className="object-cover object-top min-w-12 max-w-12 min-h-12 max-h-12 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                     src={dato.imageUrl}
+                     alt=""
+                   />
+                 </div>
+                 <div className="hidden lg:block">
+                   <p className="text-xs font-bold">{dato.title.length < 60 ? dato.title : dato.title.slice(0, 60) + '...'}</p>
+                 </div>
+                 <div className="block lg:hidden">
+                   <p className="text-xs font-bold">{dato.title.length < 30 ? dato.title : dato.title.slice(0, 30) + '...'}</p>
+                 </div>
+               </article>
+             </Link>
+           ))}
+         </main>
+         )}
         </section>
       </section>
 

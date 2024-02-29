@@ -19,14 +19,14 @@
 
 @media screen and (min-width: 300px) {
   iframe {
-    width: 360px; 
-    height: 215px;
+    width: 50%; 
+    height: 30%;
   }
 }
 
 @media screen and (min-width: 1000px) {
   iframe {
-    width: 560px;
-    height: 315px;
+    width: 70%;
+    height: 50%;
   }
 }
