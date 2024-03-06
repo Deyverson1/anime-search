@@ -15,19 +15,19 @@ interface PosterProps{
 
 export default function Poster({titles, image, status, year, episodes, duration, rating}: PosterProps){
   return(
-    <main className=" pt-20 lg:pl-40">
-    <div className="rounded-md p-1 bg-white w-64">
-      <img src={image} alt={`Image from ${titles}`} className="rounded-md w-64 aspect-auto" />
+    <main className="pt-20  lg:pl-40">
+    <div className="w-64 p-1 bg-white rounded-md">
+      <img src={image} alt={`Image from ${titles}`} className="w-64 rounded-md aspect-auto" />
     </div>
-    <p className="my-4 text-center py-2 rounded-md bg-red-600 uppercase">{status}</p>
-    <section className="flex justify-between gap-x-4 box-border flex-1 w-64">
-      <button className=" p-2 rounded-md bg-white text-black justify-center gap-x-2 flex items-center">
-        <div className="rounded-full p-1 bg-red-600"><FilledHeart /></div>
-        <div className="text-xs leading-3"> <strong className="uppercase text-sm">agregar</strong> a favoritos </div>
+    <p className="py-2 my-4 text-center uppercase bg-red-600 rounded-md">{status}</p>
+    <section className="box-border flex justify-between flex-1 w-64 gap-x-4">
+      <button className="flex items-center justify-center p-2 text-black bg-white rounded-md  gap-x-2">
+        <div className="p-1 bg-red-600 rounded-full"><FilledHeart /></div>
+        <div className="text-xs leading-3"> <strong className="text-sm uppercase">agregar</strong> a favoritos </div>
       </button>
-      <button className=" p-2 rounded-md bg-white text-black justify-center gap-x-2 flex items-center">
-        <div className="rounded-full p-1 bg-blue-600"><Check /></div>
-        <div className="text-xs leading-3"> <strong className="uppercase text-sm">seguir</strong> Anime </div>
+      <button className="flex items-center justify-center p-2 text-black bg-white rounded-md  gap-x-2">
+        <div className="p-1 bg-blue-600 rounded-full"><Check /></div>
+        <div className="text-xs leading-3"> <strong className="text-sm uppercase">seguir</strong> Anime </div>
       </button>
     </section>
     <Info rating={rating} year={year} titles={titles} duration={duration} episodes={episodes}/>
