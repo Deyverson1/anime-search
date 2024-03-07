@@ -19,8 +19,8 @@
 
 @media screen and (min-width: 300px) {
   iframe {
-    width: 50%; 
-    height: 30%;
+    width: 90%; 
+    height: 60%;
   }
 }
 
