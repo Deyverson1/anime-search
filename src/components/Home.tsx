@@ -33,17 +33,17 @@ export default function Home({ setData }: HomeProps) {
   }
   return (
     <>
-      <section className="top-0 flex flex-col w-full py-4 bg-cover lg:px-40" style={{backgroundImage: "url('https://cdna.artstation.com/p/assets/images/images/041/571/736/large/leys-1.jpg?1632086359')"}}
+      <section className="top-0 flex flex-col w-full px-2 py-4 bg-cover lg:px-40" style={{backgroundImage: "url('https://cdna.artstation.com/p/assets/images/images/041/571/736/large/leys-1.jpg?1632086359')"}}
       >
         <header className="flex flex-col items-center justify-between w-full lg:flex-row">
-          <div className="flex w-2/12">
+          <div className="flex pb-2 lg:w-2/12">
               <h1 className="w-full text-2xl font-semibold">このはアニメ</h1>
           </div>
           <section className="flex justify-end w-full gap-8">
-          <div className="flex items-center justify-end">
+          <div className="items-center justify-end hidden lg:flex">
             <a href="/" className="text-lg text-gray-300">Home</a>
           </div>
-          <form className="w-10/12 lg:w-5/12">
+          <form className="w-full lg:w-5/12">
             <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div className="relative">
               <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
