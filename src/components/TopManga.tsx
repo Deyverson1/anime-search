@@ -22,7 +22,7 @@ export default function TopManga() {
       })
   }, [])
   return (
-    <section className="flex flex-col w-full mt-20 gap-y-4">
+    <section className="flex flex-col w-full px-4 mt-10 lg:mt-20 lg:px-0 gap-y-4">
       <h1 className="text-xl font-bold text-black">Top Manga:</h1>
       {topManga.map((dato, index) => (
         <article key={index} className="flex items-center justify-center min-w-80">

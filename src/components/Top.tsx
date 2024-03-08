@@ -9,7 +9,7 @@ interface TopProps{
 
 export default function Top({data}: TopProps) {
   return (
-    <article className="flex flex-col gap-8 lg:flex-row lg:px-20">
+    <article className="flex flex-col gap-0 lg:gap-8 lg:flex-row lg:px-20">
       <section>
         <TopManga/>
       </section>

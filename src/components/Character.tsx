@@ -44,18 +44,18 @@ export default function Character() {
 
   return (
     <section className="px-2 py-8 lg:px-40">
-      <header className="flex px-32 justify-between w-full items-center pb-8">
-        <h1 className="text-xl text-center font-bold ">Quote:</h1>
-        <div onClick={handleRefresh} className="flex justify-end items-end">
+      <header className="flex items-center justify-between w-full px-32 pb-8">
+        <h1 className="text-xl font-bold text-center ">Quote:</h1>
+        <div onClick={handleRefresh} className="flex items-end justify-end">
           <Refresh />
         </div>
       </header>
       {quote !== null && response !== null && Array.isArray(response) && response.length > 0 && (
         <section className="flex flex-wrap justify-center gap-x-8">
           <div>
-            <h1 className="text-xl font-bold">{quote.character}</h1>
+            <h1 className="text-xl font-bold text-black">{quote.character}</h1>
             <h2 className="text-yellow-600">{quote.anime}</h2>
-            <p className="max-w-96 italic">"{quote.quote}"</p>
+            <p className="italic text-black max-w-96">"{quote.quote}"</p>
           </div>
           <div>
             <img

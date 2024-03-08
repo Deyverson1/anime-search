@@ -21,7 +21,7 @@ export default function TopAnimes() {
       })
   }, [])
   return (
-    <main className="px-10 lg:px-0">
+    <main className="px-4 lg:px-0">
       <h1 className="pb-4 text-xl font-bold text-black lg:pl-6">Top Anime: </h1>
       <section className="flex flex-col items-center justify-center">
         <section className="flex flex-col flex-1 gap-4 lg:flex-row lg:flex-wrap lg:justify-center ">
