@@ -29,17 +29,17 @@ export default function AnimeDetails({ data }: AnimeDetailsProps) {
       .catch(error => console.error('Error fetching AnimeDetails', error))
   }, [id])
   return (
-    <section  className="pb-8">
+    <section  className="pb-8 text-black">
       <NavDetails />
       {content.map(({ type, title, titles, synopsis, image, status, genres, trailer, rank, rating, popularity, favorites, members, score, scored_by, background, streaming, year, source, episodes, external, duration, producers }, index) => (
-        <article key={index} className="flex gap-x-10 justify-center flex-wrap lg:flex-nowrap" >
+        <article key={index} className="flex flex-wrap justify-center gap-x-10 lg:flex-nowrap" >
           <Poster rating={rating} duration={duration} episodes={episodes} titles={titles} image={image} status={status} year={year} />
-          <section className="flex flex-col px-2 items-center lg:block bottom-0">
-            <div className="mt-8 lg:mt-60 gap-4 flex flex-wrap  items-center">
-              <h1 className="text-2xl max-w-md">{title}</h1>
-              <h2 className="bg-orange-500 px-4 rounded-md">{type}</h2>
-              <h3 className="bg-pink-500 px-4 rounded-md">{source}</h3>
-              <h4 className="bg-white text-black px-4 rounded-md">Episodes: {episodes}</h4>
+          <section className="bottom-0 flex flex-col items-center px-2 lg:block">
+            <div className="flex flex-wrap items-center gap-4 mt-8 lg:mt-60">
+              <h1 className="max-w-md text-2xl">{title}</h1>
+              <h2 className="px-4 bg-orange-500 rounded-md">{type}</h2>
+              <h3 className="px-4 bg-pink-500 rounded-md">{source}</h3>
+              <h4 className="px-4 text-black bg-white rounded-md">Episodes: {episodes}</h4>
             </div>
             <PrincipalCard favorites={favorites} rank={rank} popularity={popularity} members={members} score={score} genres={genres} synopsis={synopsis} trailer={trailer} background={background} streaming={streaming} producers={producers} scored_by={scored_by} external={external}/>
           </section>

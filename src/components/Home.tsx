@@ -9,6 +9,9 @@ export default function Home({ setData }: HomeProps) {
   const input = useRef<HTMLInputElement>(null);
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
+    document.addEventListener('DOMContentLoaded', function(){
+      setData('')
+    })
     if (input.current && input.current.value.trim() !== "") {
       const value = input.current.value;
       const API = `https://api.jikan.moe/v4/anime?q=${value}&sfw`;
@@ -30,13 +33,17 @@ export default function Home({ setData }: HomeProps) {
   }
   return (
     <>
-      <section className="top-0 flex flex-col w-full bg-cover"
+      <section className="top-0 flex flex-col w-full py-4 bg-cover lg:px-40" style={{backgroundImage: "url('https://cdna.artstation.com/p/assets/images/images/041/571/736/large/leys-1.jpg?1632086359')"}}
       >
-        <header className="flex flex-col items-center justify-center w-full pt-8 lg:flex-row">
-          <div className="flex items-center justify-center">
-            <img className="w-1/2" src="/images/image.png" alt="" />
+        <header className="flex flex-col items-center justify-between w-full lg:flex-row">
+          <div className="flex w-2/12">
+              <h1 className="w-full text-2xl font-semibold">このはアニメ</h1>
           </div>
-          <form className="w-10/12 pb-4 lg:w-5/12">
+          <section className="flex justify-end w-full gap-8">
+          <div className="flex items-center justify-end">
+            <a href="/" className="text-lg text-gray-300">Home</a>
+          </div>
+          <form className="w-10/12 lg:w-5/12">
             <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div className="relative">
               <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
@@ -48,6 +55,7 @@ export default function Home({ setData }: HomeProps) {
               <button onClick={handleClick} type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
             </div>
           </form>
+          </section>
         </header>
       </section>
     </>

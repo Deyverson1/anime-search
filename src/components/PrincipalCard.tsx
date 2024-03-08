@@ -6,23 +6,20 @@ interface PrincipalCard {
 }
 export default function PrincipalCard({ favorites, rank, popularity, members, score, genres, synopsis, trailer, background, streaming, producers, scored_by, external }: PrincipalCard) {
   return (
-    <section className="p-1 lg:p-4 bg-neutral-900 rounded-lg w-full lg:w-10/12 min-x-10/12 mt-6 mr- z-1 text-white">
+    <section className="w-full p-1 mt-6 text-black bg-gray-300 rounded-lg lg:p-4 lg:w-10/12 min-x-10/12 mr- z-1">
       <Rank favorites={favorites} rank={rank} popularity={popularity} members={members} score={score} scored_by={scored_by} />
-      <h1 className="border-b-2 text-md uppercase border-gray-500 mb-4">Synopsis:</h1>
-      <div className="flex flex-wrap lg:flex-nowrap gap-2 my-4">
+      <h1 className="mb-4 uppercase border-b-2 border-gray-500 text-md">Synopsis:</h1>
+      <div className="flex flex-wrap gap-2 my-4 lg:flex-nowrap">
         {genres.map((date: { name: string }, index: number) => (
-          <p key={index} className="rounded-full bg-neutral-700 px-4 hover:bg-neutral-600 cursor-pointer">{date.name}</p>
+          <p key={index} className="px-4 rounded-full cursor-pointer bg-neutral-700 hover:bg-neutral-600">{date.name}</p>
         ))}
       </div>
       <p className="w-full text-sm">{synopsis}</p>
-      <div className="flex justify-center py-8 w-full">
+      <div className="flex justify-center w-full py-8">
         {trailer !== null && (
           <iframe
             title="YouTube Video Player"
             className="aspect-video"
-
-            // width="360"
-            // height="215"
             src={`${trailer}?autoplay=0`}
             frameBorder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -33,7 +30,7 @@ export default function PrincipalCard({ favorites, rank, popularity, members, sc
       <section>
         {background !== null && (
           <div>
-            <h1 className="border-b-2 border-gray-500 mb-4">Background:</h1>
+            <h1 className="mb-4 border-b-2 border-gray-500">Background:</h1>
             <p>{background}</p>
           </div>
         )}
