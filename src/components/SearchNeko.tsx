@@ -48,22 +48,22 @@ export default function SearchNeko({category, amount, title}: SearchNekoProps){
   }
 
   return(
-    <main className="">
-      <h1 className="text-center text-xl font-bold pb-4">{title}</h1>
-      <section className="flex gap-x-2 gap-y-8 justify-center flex-wrap">
+    <main className="hidden lg:block">
+      <h1 className="pb-4 text-xl font-bold text-center text-black">{title}</h1>
+      <section className="flex flex-col flex-wrap items-center justify-center gap-x-2 gap-y-4">
         {Array.isArray(response) && response !== null && response.length > 0 && response.map((data: {image: string, artistName: string, artist: string, liked: string}, index) => (
-          <article key={index} className=" rounded-lg hover:bg-[#1a1a1a]" style={{ backgroundColor: '' }}>
-            <div className="p-2"><img src={data.image} className="h-56 rounded-lg w-56" /></div>
+          <article key={index} className="rounded-lg " style={{ backgroundColor: '' }}>
+            <div className="p-2 text-black"><img src={data.image} className="w-56 h-56 rounded-lg" /></div>
             <div className="px-2 text-center">
-              <h1 className="font-bold pt-2 pb-2 text-lg">{data.artistName}</h1>
+              <h1 className="pb-2 text-lg font-bold text-black">{data.artistName}</h1>
               <div>
                 <a target="blank" href={data.artist}>
-                  <button type="button" className="text-white bg-[#222222] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2 gap-x-2">
+                  <button type="button" className="text-white bg-blue-600 hover:bg-blue-400 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-blue-400 me-2 mb-2 gap-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                     Artist
                   </button>
                 </a>
-                <button onClick={() => handleLike(index)} type="button" className="text-white bg-[#222222] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-2.5 py-2 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2 gap-x-2">
+                <button onClick={() => handleLike(index)} type="button" className="text-white bg-red-500 hover:bg-red-400 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-2.5 py-2 text-center inline-flex items-center dark:focus:ring-red-400 dark:bg-red-500 me-2 mb-2 gap-x-2">
                   {!data.liked
                     ? <Heart />
                     : <FilledHeart />}
