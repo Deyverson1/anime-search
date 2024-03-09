@@ -31,7 +31,7 @@ export default function TopManga() {
             : dato.title
           }</h1>
           <div className="flex flex-wrap justify-end w-fit">
-            <p className="px-4 bg-blue-500 rounded-full w-fit">Manga</p>
+            <p className="px-4 bg-blue-500 rounded-full w-fit hover:scale-110">Manga</p>
           </div>
         </article>
       ))

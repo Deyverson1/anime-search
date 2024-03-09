@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRef } from "react"
-import { Link } from "react-router-dom";
 
 interface HomeProps {
   setData: any,
@@ -29,6 +28,7 @@ export default function Home({ setData }: HomeProps) {
           setData(animeData);
         })
         .catch(error => console.error('Error fetching data:', error));
+
     }
 
   }
@@ -36,6 +36,7 @@ export default function Home({ setData }: HomeProps) {
     <>
       <section className="top-0 flex flex-col w-full px-2 py-2 bg-blue-500 bg-cover lg:px-40 "
       >
+
         <header className="flex flex-col items-center justify-between w-full lg:flex-row">
           <a href="/" className="flex">
             <div className="flex pb-2 lg:w-full">
@@ -60,6 +61,7 @@ export default function Home({ setData }: HomeProps) {
             </form>
           </section>
         </header>
+
       </section>
     </>
 

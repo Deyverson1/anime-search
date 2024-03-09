@@ -5,8 +5,8 @@ interface PrincipalCard {
   favorites: number, rank: number, trailer: string, score: number, members: number, popularity: number, genres: any, synopsis: string, background: string, streaming: any, producers: any, scored_by: number, external: any,
 }
 export default function PrincipalCard({ favorites, rank, popularity, members, score, genres, synopsis, trailer, background, streaming, producers, scored_by, external }: PrincipalCard) {
-  return (
-    <section className="w-full p-1 mt-6 text-black bg-gray-300 rounded-lg lg:p-4 lg:w-10/12 min-x-10/12 mr- z-1">
+  return ( 
+    <section className="w-full p-1 mt-6 text-black bg-gray-300 rounded-lg lg:p-4 lg:min-w-10/12 lg:w-10/12 min-x-10/12 mr- z-1">
       <Rank favorites={favorites} rank={rank} popularity={popularity} members={members} score={score} scored_by={scored_by} />
       <h1 className="mb-4 uppercase border-b-2 border-gray-500 text-md">Synopsis:</h1>
       <div className="flex flex-wrap gap-2 my-4 lg:flex-nowrap">

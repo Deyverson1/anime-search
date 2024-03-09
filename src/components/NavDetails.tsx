@@ -34,7 +34,7 @@ export default function NavDetails() {
   }
   return (
     <section className="flex flex-col items-center justify-between w-full lg:flex-row ">
-      <section className="top-0 flex items-center justify-between w-full py-4 bg-gray-800 bg-cover lg:px-40 lg:items-stretch ">
+      <section className="top-0 flex items-center justify-between w-full py-4 bg-blue-500 bg-cover lg:px-40 lg:items-stretch ">
       <a href="/">
         <div className="absolute flex items-center justify-center w-2/12 pt-3">
           <h1 className="w-full text-2xl font-semibold text-white">このはアニメ</h1>
@@ -46,14 +46,14 @@ export default function NavDetails() {
       
         <header className="flex flex-col items-center w-6/12 ">
           <form className="w-full lg:w-full">
-            <label className="text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <label className="text-sm font-medium text-gray-900 sr-only dark:text-red-800">Search</label>
             <div className="relative">
               <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
-                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-gray-600 dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
               </div>
-              <input value={value} onChange={handleChange} ref={inputChange} type="search" id="default-search" className="block w-full p-4 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg ps-10 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Animes..." required />
+              <input value={value} onChange={handleChange} ref={inputChange} type="search" id="default-search" className="block w-full p-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg ps-10 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-700 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Animes..." required />
             </div>
           </form>
 

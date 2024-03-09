@@ -43,7 +43,7 @@ export default function Character() {
   }, [quote]);
 
   return (
-    <section className="px-2 py-8 lg:px-40">
+    <section className="px-2 py-8 ">
       <header className="flex items-center justify-between w-full px-32 pb-8">
         <h1 className="text-xl font-bold text-center ">Quote:</h1>
         <div onClick={handleRefresh} className="flex items-end justify-end">
