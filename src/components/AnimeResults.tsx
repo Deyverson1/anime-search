@@ -7,8 +7,8 @@ interface AnimeResultsProps {
 export default function AnimeResults({ data }: AnimeResultsProps) {
   return (
    <>
-    {data !== null && data !== undefined && (
-      <section className="px-1 my-14">
+    {data !== null && data !== undefined && data.length > 0 &&(
+      <section className="px-1 py-14">
       {data !== null && data !== undefined && data.length > 3
         ? <h1 className="pb-4 pl-2 text-xl font-bold text-black lg:text-center">Anime Results:</h1>
         : <h1 className="hidden text-black">none</h1>

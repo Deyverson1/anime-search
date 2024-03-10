@@ -1,12 +1,15 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { HomeIcon } from "../icons/HomeIcon";
+import { SearchIcon } from "./Search";
+import { Exit } from "./Exit";
 
 interface Response { imageUrl: string, title: string, id: number }
 
 export default function NavDetails() {
   const [responseFetch, setResponseFetch] = useState<Response[]>([])
   const [value, setValueInput] = useState<string>()
+  const [isSearch, setSearch] = useState(false)
   const inputChange = useRef<HTMLInputElement>(null)
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault()
@@ -32,32 +35,50 @@ export default function NavDetails() {
     setResponseFetch([])
     setValueInput('')
   }
-  return (
-    <section className="flex flex-col items-center justify-between w-full lg:flex-row ">
-      <section className="top-0 flex items-center justify-between w-full py-4 bg-blue-500 bg-cover lg:px-40 lg:items-stretch ">
-      <a href="/">
-        <div className="absolute flex items-center justify-center w-2/12 pt-3">
-          <h1 className="w-full text-2xl font-semibold text-white">このはアニメ</h1>
-        </div>
-      </a>
-      <div className="flex items-center">
-        <a href="/" className="text-lg text-white">Home</a>
-      </div>
-      
-        <header className="flex flex-col items-center w-6/12 ">
-          <form className="w-full lg:w-full">
-            <label className="text-sm font-medium text-gray-900 sr-only dark:text-red-800">Search</label>
-            <div className="relative">
-              <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
-                <svg className="w-4 h-4 text-gray-600 dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                </svg>
-              </div>
-              <input value={value} onChange={handleChange} ref={inputChange} type="search" id="default-search" className="block w-full p-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg ps-10 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-700 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Animes..." required />
-            </div>
-          </form>
 
-        </header>
+  function handleSearch() {
+    setSearch(!isSearch)
+  }
+  return (
+    <section className="flex flex-col items-center justify-between w-full lg:flex-row">
+      <section className="top-0 flex items-center justify-between w-full h-16 px-8 py-3 bg-blue-500 bg-cover lg:px0 lg:px-40 lg:items-stretch ">
+        <a href="/" className="hidden lg:flex">
+          <div className="flex items-center pb-2 gap-x-2 lg:w-full">
+            <div className="flex items-center justify-center">
+              <img src="https://images.vexels.com/media/users/3/224288/isolated/preview/4811a550e4488add2cda3ec1f88bebb6-logotipo-de-lobo-aullando.png" className="w-14" alt="" />
+            </div>
+            <h1 className="w-full pt-2 text-2xl font-semibold text-white">このはアニメ</h1>
+          </div>
+        </a>
+          <header className={`flex justify-between w-full transition-opacity duration-1000 ${!isSearch ? '' : 'hidden'}`}>
+            <div className="flex items-center">
+              <a href="/" className="text-lg text-white">Home</a>
+            </div>
+            <div className=" w-fit" onClick={handleSearch}>
+              <SearchIcon />
+            </div>
+          </header>
+
+          <section className={`flex justify-between items-center w-full transition-opacity duration-1000 ${isSearch ? '' : 'hidden'}`}>
+            <header className="flex flex-col items-center w-10/12 lg:w-6/12 ">
+              <form className="w-full lg:w-full">
+                <label className="text-sm font-medium text-gray-900 sr-only dark:text-red-800">Search</label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
+                    <svg className="w-4 h-4 text-gray-600 dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                  </div>
+                  <input value={value} onChange={handleChange} ref={inputChange} type="search" id="default-search" className="block w-full p-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg ps-10 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-700 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Animes..." required />
+                </div>
+              </form>
+            </header>
+            <div className="w-fit" onClick={handleSearch}>
+              <Exit />
+            </div>
+          </section>
+        
+        
       </section>
       <section className="absolute mt-2 top-20 w-12/12 z-1 lg:right-52 lg:w-4/12">
         {responseFetch && value != '' && value != undefined && (

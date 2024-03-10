@@ -34,12 +34,15 @@ export default function Home({ setData }: HomeProps) {
   }
   return (
     <>
-      <section className="top-0 flex flex-col w-full px-2 py-2 bg-blue-500 bg-cover lg:px-40 "
+      <section className="top-0 flex flex-col w-full px-2 py-3 bg-blue-500 bg-cover lg:px-40 "
       >
 
         <header className="flex flex-col items-center justify-between w-full lg:flex-row">
           <a href="/" className="flex">
-            <div className="flex pb-2 lg:w-full">
+            <div className="flex items-center pb-2 gap-x-2 lg:w-full">
+              <div className="flex items-center justify-center">
+                <img src="https://images.vexels.com/media/users/3/224288/isolated/preview/4811a550e4488add2cda3ec1f88bebb6-logotipo-de-lobo-aullando.png" className="w-14" alt="" />
+              </div>
               <h1 className="w-full pt-2 text-2xl font-semibold">このはアニメ</h1>
             </div>
           </a>
