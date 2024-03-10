@@ -20,7 +20,8 @@ export default function NavDetails() {
       fetch(API)
         .then(res => res.json())
         .then(res => {
-          const dataAnime = res.data.map((anime: { title: string, url: string, images: any, mal_id: number }) => ({
+          const data = res.data
+          const dataAnime = data.map((anime: { title: string, url: string, images: any, mal_id: number }) => ({
             title: anime.title,
             url: anime.url,
             imageUrl: anime.images.jpg.image_url,
@@ -34,6 +35,7 @@ export default function NavDetails() {
   function handleCleanInput() {
     setResponseFetch([])
     setValueInput('')
+    setSearch(!isSearch)
   }
 
   function handleSearch() {

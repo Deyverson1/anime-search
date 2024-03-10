@@ -28,24 +28,28 @@ export default function Character() {
 
   useEffect(() => {
     if (!quote) return;
-    fetch(`https://api.jikan.moe/v4/characters?q=${quote.character}`)
+    if(quote && quote !== null && quote !== undefined){
+      fetch(`https://api.jikan.moe/v4/characters?q=${quote.character}`)
       .then((response) => response.json())
       .then((response) => {
-        const characters = response.data.map((info: { name: string, images: any, jpg: string, image_url: string }) => ({
-          title: info.name,
-          image: info.images.jpg.image_url
-        }));
-        setResponse(characters);
+        if(response.data && response.data !== undefined){
+          const characters = response.data.map((info: { name: string, images: any, jpg: string, image_url: string }) => ({
+            title: info.name,
+            image: info.images.jpg.image_url
+          }));
+          setResponse(characters);
+        }
       })
       .catch((error) =>
         console.error("Error fetching character details:", error)
       );
+    }
   }, [quote]);
 
   return (
     <section className="px-2 py-8 ">
-      <header className="flex items-center justify-between w-full px-32 pb-8">
-        <h1 className="text-xl font-bold text-center ">Quote:</h1>
+      <header className="flex items-center justify-between w-full pb-4 lg:pb-8 lg:px-32">
+        <h1 className="text-xl font-bold text-center text-black ">Quote:</h1>
         <div onClick={handleRefresh} className="flex items-end justify-end">
           <Refresh />
         </div>

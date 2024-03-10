@@ -12,12 +12,14 @@ export default function TopAnimes() {
       .then(res => res.json())
       .then(res => {
         const dato = res.data
-        const topData = dato.map((data: { title: string, mal_id: string, images: any }) => ({
-          title: data.title,
-          id: data.mal_id,
-          image: data.images.jpg.image_url
-        }))
-        setTopAnime(topData)
+        if(dato && dato !== undefined && dato !== null){
+          const topData = dato.map((data: { title: string, mal_id: string, images: any }) => ({
+            title: data.title,
+            id: data.mal_id,
+            image: data.images.jpg.image_url
+          }))
+          setTopAnime(topData)
+        }
       })
   }, [])
   return (
