@@ -35,7 +35,9 @@ export default function NavDetails() {
   function handleCleanInput() {
     setResponseFetch([])
     setValueInput('')
-    setSearch(!isSearch)
+    if(window.innerWidth < 800){
+      setSearch(!isSearch)
+    }
   }
 
   function handleSearch() {
@@ -47,22 +49,22 @@ export default function NavDetails() {
         <a href="/" className="hidden lg:flex">
           <div className="flex items-center pb-2 gap-x-2 lg:w-full">
             <div className="flex items-center justify-center">
-              <img src="https://images.vexels.com/media/users/3/224288/isolated/preview/4811a550e4488add2cda3ec1f88bebb6-logotipo-de-lobo-aullando.png" className="w-14" alt="" />
+              <img src="https://i.pinimg.com/originals/57/2a/f2/572af2fdb5c4ae0936c9b0894efc1867.png" className="w-12" alt="" />
             </div>
-            <h1 className="w-full pt-2 text-2xl font-semibold text-white">このはアニメ</h1>
+            <h1 className="w-48 pt-2 text-xl font-semibold text-white">このはアニメ</h1>
           </div>
         </a>
-          <header className={`flex justify-between w-full transition-opacity duration-1000 ${!isSearch ? '' : 'hidden'}`}>
+          <header className={`flex justify-between lg:justify-end lg:px-4 w-full lg:w-10/12 transition-opacity duration-1000 ${!isSearch ? '' : 'hidden'}`}>
             <div className="flex items-center">
               <a href="/" className="text-lg text-white">Home</a>
             </div>
-            <div className=" w-fit" onClick={handleSearch}>
+            <div className="lg:hidden w-fit" onClick={handleSearch}>
               <SearchIcon />
             </div>
           </header>
 
-          <section className={`flex justify-between items-center w-full transition-opacity duration-1000 ${isSearch ? '' : 'hidden'}`}>
-            <header className="flex flex-col items-center w-10/12 lg:w-6/12 ">
+          <section className={`flex justify-between items-center w-full transition-opacity duration-1000 ${isSearch ? '' : 'hidden'} lg:flex`}>
+            <header className="flex flex-col items-center w-10/12 lg:w-10/12 ">
               <form className="w-full lg:w-full">
                 <label className="text-sm font-medium text-gray-900 sr-only dark:text-red-800">Search</label>
                 <div className="relative">
@@ -75,7 +77,7 @@ export default function NavDetails() {
                 </div>
               </form>
             </header>
-            <div className="w-fit" onClick={handleSearch}>
+            <div className="w-fit lg:hidden" onClick={handleSearch}>
               <Exit />
             </div>
           </section>

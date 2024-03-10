@@ -39,11 +39,11 @@ export default function Home({ setData }: HomeProps) {
 
         <header className="flex flex-col items-center justify-between w-full lg:flex-row">
           <a href="/" className="flex">
-            <div className="flex items-center pb-2 gap-x-2 lg:w-full">
+            <div className="flex items-center justify-center gap-x-2 lg:w-full">
               <div className="flex items-center justify-center">
-                <img src="https://images.vexels.com/media/users/3/224288/isolated/preview/4811a550e4488add2cda3ec1f88bebb6-logotipo-de-lobo-aullando.png" className="w-14" alt="" />
+                <img src="https://i.pinimg.com/originals/57/2a/f2/572af2fdb5c4ae0936c9b0894efc1867.png" className="w-12" alt="" />
               </div>
-              <h1 className="w-full pt-2 text-2xl font-semibold">このはアニメ</h1>
+              <h1 className="text-xl font-semibold w-">このはアニメ</h1>
             </div>
           </a>
           <section className="flex justify-end w-10/12 gap-8">
