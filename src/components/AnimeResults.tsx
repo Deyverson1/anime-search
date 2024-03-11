@@ -10,7 +10,7 @@ export default function AnimeResults({ data }: AnimeResultsProps) {
     {data !== null && data !== undefined && data.length > 0 &&(
       <section className="px-1 py-14">
       {data !== null && data !== undefined && data.length > 3
-        ? <h1 className="pb-4 pl-2 text-xl font-bold text-black lg:text-center">Anime Results:</h1>
+        ? <h1 className="pb-4 pl-2 text-xl font-bold text-black lg:text-center dark:text-white">Anime Results:</h1>
         : <h1 className="hidden text-black">none</h1>
       }
       <main className="flex flex-col flex-wrap flex-1 w-full px-2 lg:items-center lg:justify-center gap-y-8 gap-x-4 lg:gap-y-1">
@@ -25,7 +25,7 @@ export default function AnimeResults({ data }: AnimeResultsProps) {
                 />
               </div>
               <div className="flex w-full">
-                <p className="w-10/12 m-0 text-black lg:min-w-80 lg:w-auto text-md">{dato.title.length < 35 ? dato.title : dato.title.slice(0, 35) + '...'}</p>
+                <p className="w-10/12 m-0 text-black dark:text-white lg:min-w-80 lg:w-auto text-md">{dato.title.length < 35 ? dato.title : dato.title.slice(0, 35) + '...'}</p>
               </div>
             </article>
           </Link>

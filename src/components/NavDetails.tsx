@@ -86,7 +86,7 @@ export default function NavDetails() {
       </section>
       <section className="absolute mt-2 top-20 w-12/12 z-1 lg:right-52 lg:w-4/12">
         {responseFetch && value != '' && value != undefined && (
-          <main className="z-10 flex-col items-center w-full px-2 py-2 overflow-y-scroll bg-gray-200 lg:right-20 w-12/12 gap-x-2 lg:gap-x-2 max-h-56">
+          <main className="z-10 flex-col items-center w-full px-2 py-2 overflow-y-scroll bg-gray-200 dark:bg-[#333333] lg:right-20 w-12/12 gap-x-2 lg:gap-x-2 max-h-56">
             {responseFetch !== null && responseFetch.map((dato: { imageUrl: string, title: string, id: number }, index: number) => (
               <Link key={index} to={`/anime/${dato.id}`}>
                 <article onClick={handleCleanInput} className="flex flex-1 max-w-full gap-1 space-x-0 over md:gap-x-4 lg:space-y-4 group md:space-y-0 lg:h-12">
