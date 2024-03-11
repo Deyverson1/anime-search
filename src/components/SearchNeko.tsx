@@ -49,13 +49,13 @@ export default function SearchNeko({category, amount, title}: SearchNekoProps){
 
   return(
     <main className="hidden lg:block">
-      <h1 className="pb-4 text-xl font-bold text-center text-black">{title}</h1>
+      <h1 className="pb-4 text-xl font-bold text-center text-black dark:text-white">{title}</h1>
       <section className="flex flex-col flex-wrap items-center justify-center gap-x-2 gap-y-4">
         {Array.isArray(response) && response !== null && response.length > 0 && response.map((data: {image: string, artistName: string, artist: string, liked: string}, index) => (
           <article key={index} className="rounded-lg " style={{ backgroundColor: '' }}>
             <div className="p-2 text-black"><img src={data.image} className="w-56 h-56 rounded-lg" /></div>
             <div className="px-2 text-center">
-              <h1 className="pb-2 text-lg font-bold text-black">{data.artistName}</h1>
+              <h1 className="pb-2 text-lg font-bold text-black dark:text-gray-300">{data.artistName}</h1>
               <div>
                 <a target="blank" href={data.artist}>
                   <button type="button" className="text-white bg-blue-600 hover:bg-blue-400 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-blue-400 me-2 mb-2 gap-x-2">

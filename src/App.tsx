@@ -1,5 +1,4 @@
 import React from "react"
-import Character from './components/Character'
 import Home from "./components/Home"
 import AnimeDetails from "./components/AnimeDetails"
 import { useState } from "react"
