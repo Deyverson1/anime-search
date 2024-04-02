@@ -11,7 +11,7 @@ export default function PrincipalCard({ favorites, rank, popularity, members, sc
       <h1 className="mb-4 uppercase border-b-2 border-gray-500 text-md">Synopsis:</h1>
       <div className="flex flex-wrap gap-2 my-4 lg:flex-nowrap">
         {genres.map((date: { name: string }, index: number) => (
-          <p key={index} className="px-4 rounded-full cursor-pointer bg-neutral-700 hover:bg-neutral-600">{date.name}</p>
+          <p key={index} className="px-4 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-500 dark:bg-neutral-700 dark:hover:bg-neutral-600">{date.name}</p>
         ))}
       </div>
       <p className="w-full text-sm">{synopsis}</p>
