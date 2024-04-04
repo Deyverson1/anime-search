@@ -24,14 +24,14 @@ export default function TopAnimes() {
   }, [])
   return (
     <main className="px-4 pt-4 lg:px-0">
-      <h1 className="pb-4 text-xl font-bold text-black dark:text-white lg:pl-6">Top Anime: </h1>
+      <h1 className="pb-4 text-xl font-bold text-gray-800 uppercase dark:text-white">Top Anime </h1>
       <section className="flex flex-col items-center justify-center">
         <section className="flex flex-col flex-1 gap-4 lg:flex-row lg:flex-wrap lg:justify-center ">
           {topAnime.map((data, index) => (
            <Link  key={index} to={`/anime/${data.id}`}>
             <article className="flex items-center gap-4 lg:flex-col gap-y-1">
               <img className="object-cover transition-transform rounded-full w-14 h-14 lg:rounded-lg lg:w-full lg:h-56 md:group-hover:scale-1 hover:md:scale-105" src={data.image} alt="" />
-              <h1 className="w-10/12 font-bold text-black dark:text-white lg:text-center text-md lg:min-w-52 lg:max-w-52">{data.title}</h1>
+              <h1 className="w-10/12 font-bold text-gray-800 dark:text-white lg:text-center text-md lg:min-w-52 lg:max-w-52">{data.title}</h1>
             </article>
             </Link>
           ))}
