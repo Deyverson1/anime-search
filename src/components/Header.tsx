@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRef } from "react"
+import { Link } from "react-router-dom";
 
 interface HomeProps {
   setData: any,
 }
 
-export default function Home({ setData }: HomeProps) {
+export default function Header({ setData }: HomeProps) {
   const input = useRef<HTMLInputElement>(null);
-  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+  function handleClick(e: { preventDefault: () => void; }) {
     e.preventDefault();
     document.addEventListener('DOMContentLoaded', function () {
       setData('')
@@ -19,24 +20,22 @@ export default function Home({ setData }: HomeProps) {
         .then(response => response.json())
         .then(data => {
           console.log(data.data)
-          const animeData = data.data.map((anime: { title: string, url: string, images: any, mal_id: number }) => ({
+          const animeData = data.data.map((anime: { title: string, url: string, images: any, mal_id: number, type: any }) => ({
             title: anime.title,
             url: anime.url,
             imageUrl: anime.images.jpg.image_url,
-            id: anime.mal_id
+            id: anime.mal_id,
+            genres: anime.type
           }));
           setData(animeData);
         })
         .catch(error => console.error('Error fetching data:', error));
-
     }
-
   }
   return (
     <>
       <section className="top-0 flex flex-col w-full px-2 py-3 bg-blue-500 bg-cover lg:px-40 "
       >
-
         <header className="flex flex-col items-center justify-between w-full lg:flex-row">
           <a href="/" className="flex">
             <div className="flex items-center justify-center gap-x-2 lg:w-full">
@@ -58,13 +57,16 @@ export default function Home({ setData }: HomeProps) {
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                   </svg>
                 </div>
-                <input ref={input} type="search" id="default-search" className="block w-full p-4 text-sm text-white bg-gray-100 border border-gray-300 rounded-lg ps-10 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-400 dark:placeholder-gray-500 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Animes..." required />
-                <button onClick={handleClick} type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                <input ref={input} onChange={handleClick} type="search" id="default-search" className="block w-full p-4 text-sm text-gray-600 bg-gray-100 border border-gray-300 rounded-lg ps-10 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-400 dark:placeholder-gray-500 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Animes, Manga..." required />
+                <Link to="/results" className="text-white absolute end-2.5 bottom-2.5">
+                  <button type="submit" className="px-4 py-2 text-sm font-medium bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Search
+                  </button>
+                </Link>
               </div>
             </form>
           </section>
         </header>
-
       </section>
     </>
 

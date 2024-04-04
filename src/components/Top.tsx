@@ -23,7 +23,7 @@ export default function Top({ data }: TopProps) {
           for more information click
           <a href="https://github.com/Deyverson1/anime-search" target="blank"> <span className="text-gray-900 underline hover:text-gray-700">here</span> </a>
         </div>
-        <AnimeResults data={data} />
+        {/* <AnimeResults data={data} /> */}
         <TopAnimes />
         <Recommend />
         <Character />
