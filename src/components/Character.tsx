@@ -49,17 +49,17 @@ export default function Character() {
   return (
     <section className="px-2 py-8 ">
       <header className="flex items-center justify-between w-full px-4 pb-4 lg:pb-8 ">
-        <h1 className="text-xl font-bold text-center text-black dark:text-white">Quote:</h1>
-        <div onClick={handleRefresh} className="flex items-end justify-end text-black dark:text-white">
+
+        <div onClick={handleRefresh} className="flex items-end justify-end text-gray-800 dark:text-white">
           <Refresh />
         </div>
       </header>
       {quote !== null && response !== null && Array.isArray(response) && response.length > 0 && (
-        <section className="flex flex-wrap gap-x-8">
+        <section className="flex flex-wrap px-4 md:flex-nowrap gap-x-8">
           <div>
-            <h1 className="text-xl font-bold text-black dark:text-gray-400">{quote.character}</h1>
+            <h1 className="text-xl font-bold text-gray-800 dark:text-gray-400">{quote.character}</h1>
             <h2 className="text-yellow-600">{quote.anime}</h2>
-            <p className="italic text-black dark:text-white">"{quote.quote}"</p>
+            <p className="w-full italic text-black dark:text-white">"{quote.quote}"</p>
           </div>
           <div>
             <img
@@ -71,7 +71,7 @@ export default function Character() {
                 minWidth: "225px",
                 maxWidth: "225px"
               }}
-              className="rounded-3xl"
+              className="rounded-xl"
             />
           </div>
         </section>
