@@ -55,7 +55,7 @@ export default function AnimeResults({ data }: AnimeResultsProps) {
         </svg>
         <h1 className="text-xl font-light text-center text-gray-800 md:text-2xl">Complete list of animes</h1>
       </div>
-      <section className="flex px-2 pb-8 md:px-32 gap-x-2 md:gap-x-4">
+      <section className="flex justify-between px-2 pb-8 md:justify-normal md:px-32 gap-x-2 md:gap-x-4">
 
         <select ref={selectGeneroRef} className="md:px-2 rounded-md bg-[#1d1e20] border border-gray-300 text-sm text-white p-2.5  ">
           <option value="">Genero: Todos</option>
