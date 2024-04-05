@@ -34,7 +34,7 @@ export default function AnimeDetails({ data }: AnimeDetailsProps) {
       })
   }, [id])
   return (
-    <section className="pb-8 text-black dark:text-white min-w-screen">
+    <section className="pb-8 dark:text-white min-w-screen">
       <NavDetails />
       {content.map(({ type, title, titles, synopsis, image, status, genres, trailer, rank, rating, popularity, favorites, members, score, scored_by, background, streaming, year, source, episodes, external, duration, producers, trailerImage }, index) => (
         <article key={index} className="flex flex-wrap justify-center gap-x-10 lg:flex-nowrap" >
