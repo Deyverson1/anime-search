@@ -4,7 +4,7 @@ import SearchNeko from "./SearchNeko"
 export default function NekoPict() {
   return (
     <section className="hidden px-2 pt-10 lg:block ">
-      <h1 className="text-lg font-bold text-gray-800 uppercase dark:text-white">Art explore</h1>
+      <h1 className="text-lg font-bold text-gray-800 uppercase">Art explore</h1>
       <main className="flex flex-col">
         <div className="py-8">
           <SearchNeko category={'waifu'} title={'Waifu'}  amount={2} />

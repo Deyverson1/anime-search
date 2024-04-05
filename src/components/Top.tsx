@@ -17,7 +17,7 @@ export default function Top({ data }: TopProps) {
         <NekoPict />
       </section>
       <section>
-        <div className="p-4 m-2 mt-4 tracking-tighter text-gray-800 bg-gray-300 rounded-lg text-md dark:bg-blue-500 dark:text-white" role="alert">
+        <div className="p-4 m-2 mt-4 tracking-tighter text-gray-800 bg-gray-300 rounded-lg text-md" role="alert">
           <span className="font-medium">Welcome to Anime Search!</span> Web page dedicated to the consumption of APIs by 
           <a href="https://github.com/Deyverson1" target="blank"> <span className="text-orange-400 underline">@Deyverson</span></a>,
           for more information click

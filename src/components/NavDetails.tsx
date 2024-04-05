@@ -68,7 +68,7 @@ export default function NavDetails() {
             <form className="w-full lg:w-full">
               <label className="text-sm font-medium text-gray-900 sr-only dark:text-red-800">Search</label>
               <div className="relative">
-                <input value={value} onChange={handleChange} ref={inputChange} type="search" id="default-search" className="block w-full p-4 text-sm text-gray-900 rounded-full ps-10 bg-[#2f3237]" placeholder="Search Animes..." required />
+                <input value={value} onChange={handleChange} ref={inputChange} type="search" id="default-search" className="block w-full p-4 text-sm text-gray-200 placeholder:text-gray-200 rounded-full ps-10 bg-[#2f3237]" placeholder="Search Animes..." required />
                 <div className="absolute inset-y-0 flex items-center pointer-events-none end-8 ps-3">
                   <svg className="w-4 h-4 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
@@ -84,7 +84,7 @@ export default function NavDetails() {
 
 
       </section>
-      <section className="absolute mt-2 top-20 w-12/12 z-1 lg:right-52 lg:w-4/12">
+      <section className="absolute z-50 mt-2 top-20 w-12/12 z-1 lg:right-52 lg:w-4/12">
         {responseFetch && value != '' && value != undefined && (
           <main className="z-10 flex-col items-center w-full px-2 py-2 overflow-y-scroll bg-gray-200 dark:bg-[#333333] lg:right-20 w-12/12 gap-x-2 lg:gap-x-2 max-h-56">
             {responseFetch !== null && responseFetch.map((dato: { imageUrl: string, title: string, id: number }, index: number) => (

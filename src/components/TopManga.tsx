@@ -23,7 +23,7 @@ export default function TopManga() {
   }, [])
   return (
     <section className="flex flex-col w-full px-4 mt-10 lg:mt-14 lg:px-0 gap-y-4">
-      <h1 className="text-lg font-bold text-gray-800 uppercase dark:text-white">Top Manga</h1>
+      <h1 className="text-lg font-bold text-gray-800 uppercase ">Top Manga</h1>
       {topManga.map((dato, index) => (
         <article key={index} className="flex items-center justify-center text-gray-800 duration-200 cursor-pointer hover:text-orange-300 min-w-80">
           <h1 className="w-full text-base ">{dato.title !== null && dato.title?.length > 25
