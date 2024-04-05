@@ -81,8 +81,6 @@ export default function NavDetails() {
             <Exit />
           </div>
         </section>
-
-
       </section>
       <section className="absolute z-50 mt-2 top-20 w-12/12 z-1 lg:right-52 lg:w-4/12">
         {responseFetch && value != '' && value != undefined && (

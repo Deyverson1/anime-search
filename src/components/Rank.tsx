@@ -10,7 +10,7 @@ interface RankProps {
 }
 export default function Rank({ rank, popularity, members, score, scored_by, favorites }: RankProps) {
   return (
-    <section className="flex items-center p-2 mb-8 border-2 border-white rounded-md gap-x-8">
+    <section className="flex items-center p-2 mb-8 rounded-md gap-x-8">
       <div className="flex flex-col items-center justify-center px-4 pr-6 border-r-2">
         {score && (<p className="flex items-center gap-x-2"><strong>{score}</strong><Star /> </p>)}
       </div>
