@@ -17,7 +17,7 @@ export default function Rank({ rank, popularity, members, score, scored_by, favo
       <div className="flex flex-wrap text-gray-100 gap-x-2 gap-y-2">
         <p className="px-3 bg-blue-500 rounded-full text-md">Ranked #<strong>{rank}</strong></p>
         <p className="px-3 bg-blue-500 rounded-full text-md">Popularity #<strong>{popularity}</strong></p>
-        <p className="px-3 bg-blue-500 rounded-full text-md">Members <strong> {members.toLocaleString('en-US')}</strong></p>
+        <p className="px-3 bg-blue-500 rounded-full text-md">Members <strong> {members && members.toLocaleString('en-US')}</strong></p>
         {favorites && (<p className="px-3 bg-blue-500 rounded-full text-md">Favorties {favorites.toLocaleString('en-US')}</p>)}
       </div>
     </section>

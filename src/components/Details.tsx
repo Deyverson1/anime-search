@@ -9,25 +9,24 @@ interface Content {
 }
 interface AnimeDetailsProps {
   data: any,
+  type: string
 }
 
-export default function AnimeDetails({ data }: AnimeDetailsProps) {
+export default function Details({ data, type }: AnimeDetailsProps) {
   const [content, setContent] = useState<Content[]>([])
   const { id } = useParams()
   useEffect(() => {
     const animeId = Number(id)
-    const apiId = `https://api.jikan.moe/v4/anime/${animeId}/full`
+    const apiId = `https://api.jikan.moe/v4/${type}/${animeId}/full`
     fetch(apiId)
       .then(res => res.json())
       .then(res => {
         const dato = res.data
-        console.log(dato)
+        // console.log(dato)
         const detailsData = [{
-          id: dato.mal_id, image: dato.images.webp.image_url, titles: dato.titles, title: dato.title, type: dato.type, source: dato.source, episodes: dato.episodes, status: dato.status, aired: dato.aired, duration: dato.duration, rating: dato.rating, score: dato.score, scored_by: dato.scored_by, rank: dato.rank, popularity: dato.popularity, members: dato.members, favorites: dato.favorites, synopsis: dato.synopsis, background: dato.background, year: dato.year, broadcast: dato.broadcast, producers: dato.producers, licenses: dato.licenses, genres: dato.genres, themes: dato.themes, theme: dato.theme, external: dato.external, streaming: dato.streaming, trailer: dato.trailer.embed_url, trailerImage: dato.trailer.images.maximum_image_url
+          id: dato?.mal_id, image: dato?.images?.webp?.image_url, titles: dato?.titles, title: dato?.title, type: dato?.type, source: dato?.source, episodes: dato?.episodes, status: dato?.status, aired: dato?.aired, duration: dato?.duration, rating: dato?.rating, score: dato?.score, scored_by: dato?.scored_by, rank: dato?.rank, popularity: dato?.popularity, members: dato?.members, favorites: dato?.favorites, synopsis: dato?.synopsis, background: dato?.background, year: dato?.year, broadcast: dato?.broadcast, producers: dato?.producers, licenses: dato?.licenses, genres: dato?.genres, themes: dato?.themes, theme: dato?.theme, external: dato?.external, streaming: dato?.streaming, trailer: dato?.trailer?.embed_url, trailerImage: dato?.trailer?.images?.maximum_image_url
         }]
         setContent(detailsData)
-
-
       })
       .catch(error => {
         console.error('Error fetching AnimeDetails', error)
@@ -35,7 +34,7 @@ export default function AnimeDetails({ data }: AnimeDetailsProps) {
   }, [id])
   return (
     <section className="pb-8 dark:text-white min-w-screen">
-      <NavDetails />
+      <NavDetails type={type}/>
       {content.map(({ type, title, titles, synopsis, image, status, genres, trailer, rank, rating, popularity, favorites, members, score, scored_by, background, streaming, year, source, episodes, external, duration, producers, trailerImage }, index) => (
         <article key={index} className="flex flex-wrap justify-center gap-x-10 lg:flex-nowrap" >
           <div className="absolute h-96 w-full bg-[#2f3237]">

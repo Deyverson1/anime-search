@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { HomeIcon } from "../icons/HomeIcon";
-import { SearchIcon } from "./Search";
-import { Exit } from "./Exit";
+import { SearchIcon } from "../icons/Search";
+import { Exit } from "../icons/Exit";
 
 interface Response { imageUrl: string, title: string, id: number }
+interface NavProps {type: string}
 
-export default function NavDetails() {
+export default function NavDetails({type}: NavProps) {
   const [responseFetch, setResponseFetch] = useState<Response[]>([])
   const [value, setValueInput] = useState<string>()
   const [isSearch, setSearch] = useState(false)
@@ -15,7 +15,7 @@ export default function NavDetails() {
     e.preventDefault()
     const inputValue = inputChange.current?.value
     setValueInput(inputValue)
-    const API = `https://api.jikan.moe/v4/anime?q=${inputValue}&sfw`
+    const API = `https://api.jikan.moe/v4/${type}?q=${inputValue}&sfw`
     if (inputChange.current && inputChange.current.value.trim() !== "" && inputValue !== undefined && inputValue?.length >= 3) {
       fetch(API)
         .then(res => res.json())
@@ -86,7 +86,7 @@ export default function NavDetails() {
         {responseFetch && value != '' && value != undefined && (
           <main className="z-10 flex-col items-center w-full px-2 py-2 overflow-y-scroll bg-gray-200 dark:bg-[#333333] lg:right-20 w-12/12 gap-x-2 lg:gap-x-2 max-h-56">
             {responseFetch !== null && responseFetch.map((dato: { imageUrl: string, title: string, id: number }, index: number) => (
-              <Link key={index} to={`/anime/${dato.id}`}>
+              <Link key={index} to={`/${type}/${dato.id}`}>
                 <article onClick={handleCleanInput} className="flex flex-1 max-w-full gap-1 space-x-0 over md:gap-x-4 lg:space-y-4 group md:space-y-0 lg:h-12">
                   <div className="flex flex-col col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform rounded-lg shadow-xl overflow-clip sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
                     <img

@@ -13,25 +13,36 @@ export default function Header({ setData }: HomeProps) {
     })
     if (input.current && input.current.value.trim() !== "") {
       const value = input.current.value;
-      const API = `https://api.jikan.moe/v4/anime?q=${value}&sfw`;
-      fetch(API)
-        .then(response => response.json())
+      const animeAPI = `https://api.jikan.moe/v4/anime?q=${value}&sfw`;
+      const mangaAPI = `https://api.jikan.moe/v4/manga?q=${value}&sfw`;
+
+      Promise.all([fetch(animeAPI), fetch(mangaAPI)])
+        .then(responses => Promise.all(responses.map(response => response.json())))
         .then(data => {
-          console.log(data.data)
-          const animeData = data.data.map((anime: { title: string, url: string, images: any, mal_id: number, type: string, genres: any }) => ({
+          const animeData = data[0].data.map((anime: { title: string, url: string, images: any, mal_id: number, type: string, genres: any }) => ({
             title: anime.title,
             url: anime.url,
             imageUrl: anime.images.jpg.image_url,
             id: anime.mal_id,
             tipo: anime.type,
             genres: anime.genres
-        
           }));
-          setData(animeData);
-          console.log(animeData)
+
+          const mangaData = data[1].data.map((manga: { title: string, url: string, images: any, mal_id: number, type: string, genres: any }) => ({
+            title: manga.title,
+            url: manga.url,
+            imageUrl: manga.images.jpg.image_url,
+            id: manga.mal_id,
+            tipo: manga.type,
+            genres: manga.genres
+          }));
+
+          const combinedData = [...animeData, ...mangaData];
+          setData(combinedData);
         })
         .catch(error => console.error('Error fetching data:', error));
     }
+
   }
   return (
     <>
@@ -58,14 +69,16 @@ export default function Header({ setData }: HomeProps) {
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                   </svg> */}
                 </div>
-                <input ref={input} onChange={handleClick} type="search" id="default-search" className="block w-full p-4 text-sm text-gray-200 bg-[#2f3237] rounded-full ps-10  placeholder-gray-200 " placeholder="Search Animes, Manga..." required />
-                <Link to="/results" className="text-gray-700 absolute end-2.5 bottom-2.5">
-                  <button type="submit" className="px-4 py-2 text-sm font-medium bg-[#2f3237] rounded-lg hover:bg-[#43474d] focus:ring-4 focus:outline-none focus:ring-blue-300 ">
-                    <svg className="w-4 h-4 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                    </svg>
-                  </button>
-                </Link>
+                <input ref={input} type="search" id="default-search" className="block w-full p-4 text-sm text-gray-200 bg-[#2f3237] rounded-full ps-10  placeholder-gray-200 " placeholder="Search Animes, Manga..." required />
+                <div onClick={handleClick}>
+                  <Link to="/results" className="text-gray-700 absolute end-2.5 bottom-2.5">
+                    <button type="submit" className="px-4 py-2 text-sm font-medium bg-[#2f3237] rounded-lg hover:bg-[#43474d] focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+                      <svg className="w-4 h-4 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                      </svg>
+                    </button>
+                  </Link>
+                </div>
               </div>
             </form>
           </section>

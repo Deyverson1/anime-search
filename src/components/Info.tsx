@@ -17,7 +17,7 @@ export default function Info({year, titles, episodes, duration, rating}: InfoPro
     <h2 className="py-1"><strong>Episodes:</strong> {episodes}</h2>
     <h2 className="py-1"><strong>Duration:</strong> {duration}</h2>
     <h3  className="pt-4 mb-4 text-lg font-bold text-gray-800 uppercase">Titles </h3>
-    {titles.map(( dato: {type: string, title: string}, index: number) => (
+    {titles && titles.map(( dato: {type: string, title: string}, index: number) => (
       <article key={index}>
         <p className="py-1"><strong>{dato.type}</strong>: {dato.title}</p>
       </article>

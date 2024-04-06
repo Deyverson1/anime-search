@@ -10,13 +10,13 @@ export default function PrincipalCard({ favorites, rank, popularity, members, sc
       <Rank favorites={favorites} rank={rank} popularity={popularity} members={members} score={score} scored_by={scored_by} />
       <h1 className="mb-4 text-lg font-bold text-gray-800">Synopsis</h1>
       <div className="flex flex-wrap gap-2 my-4 lg:flex-nowrap">
-        {genres.map((date: { name: string }, index: number) => (
+        {genres && genres.map((date: { name: string }, index: number) => (
           <p key={index} className="px-4 bg-[#2f3237] text-gray-100 rounded-full cursor-pointer hover:bg-[#43474d]">{date.name}</p>
         ))}
       </div>
       <p className="w-full text-sm">{synopsis}</p>
       <div className="flex justify-center w-full py-8">
-        {trailer !== null && (
+        {trailer && trailer !== null && (
           <iframe
             title="YouTube Video Player"
             className="aspect-video"

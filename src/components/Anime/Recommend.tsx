@@ -1,5 +1,5 @@
 import React from "react";
-import { dataBase } from "../database/database";
+import { dataBase } from "../../database/database";
 import { Link } from "react-router-dom";
 function Recommend() {
   return (

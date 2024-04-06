@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Refresh } from "../icons/Refresh";
 
-export default function Character() {
+export default function Quote() {
   interface Quote {
     character: string;
     anime: string;
@@ -50,7 +50,7 @@ export default function Character() {
     <section className="px-2 py-8 ">
       <header className="flex items-center justify-between w-full px-4 pb-4 lg:pb-8 ">
 
-        <div onClick={handleRefresh} className="flex items-end justify-end text-gray-800 ">
+        <div onClick={handleRefresh} className="flex items-end justify-end text-gray-800 cursor-pointer hover:text-orange-500">
           <Refresh />
         </div>
       </header>

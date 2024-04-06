@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { Heart } from "../icons/Heart"
 import { FilledHeart } from "../icons/FilledHeart"
 
-interface SearchNekoProps {
+interface SearchArtProps {
   category: string,
   amount: number,
   title: string,
@@ -15,7 +15,7 @@ interface Response {
   liked?: boolean
 }
 
-export default function SearchNeko({category, amount, title}: SearchNekoProps){
+export default function SearchArt({category, amount, title}: SearchArtProps){
 
   const [response, setResponse] = useState<Response | null>(null)
 
