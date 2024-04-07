@@ -42,7 +42,6 @@ export default function Header({ setData }: HomeProps) {
         })
         .catch(error => console.error('Error fetching data:', error));
     }
-
   }
   return (
     <>

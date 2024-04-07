@@ -1,11 +1,13 @@
 import React from "react";
 import Rank from "./Rank";
 import AdditionalInfo from "./AdditionalInfo";
+import Characters from "./Characters";
 interface PrincipalCard {
-  favorites: number, rank: number, trailer: string, score: number, members: number, popularity: number, genres: any, synopsis: string, background: string, streaming: any, producers: any, scored_by: number, external: any,
+  type: string, favorites: number, rank: number, trailer: string, score: number, members: number, popularity: number, genres: any, synopsis: string, background: string, scored_by: number,
 }
-export default function PrincipalCard({ favorites, rank, popularity, members, score, genres, synopsis, trailer, background, streaming, producers, scored_by, external }: PrincipalCard) {
-  return ( 
+export default function PrincipalCard({ type, favorites, rank, popularity, members, score, genres, synopsis, trailer, background, scored_by }: PrincipalCard) {
+  // console.log(type)
+  return (
     <section className="w-full p-1 mt-6 text-black bg-gray-100 rounded-md shadow-md shadow-current lg:p-4 lg:min-w-10/12 lg:w-10/12 min-x-10/12 mr- z-1">
       <Rank favorites={favorites} rank={rank} popularity={popularity} members={members} score={score} scored_by={scored_by} />
       <h1 className="mb-4 text-lg font-bold text-gray-800">Synopsis</h1>
@@ -35,7 +37,7 @@ export default function PrincipalCard({ favorites, rank, popularity, members, sc
           </div>
         )}
       </section>
-      {/* <AdditionalInfo streaming={streaming} producers={producers} external={external} /> */}
+      <Characters type={type} />
     </section>
   )
 }

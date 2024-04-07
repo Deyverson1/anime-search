@@ -22,6 +22,9 @@ export default function AnimeResults({ data }: AnimeResultsProps) {
   const selectTypeRef = useRef<HTMLSelectElement>(null);
   const selectGeneroRef = useRef<HTMLSelectElement>(null);
 
+  console.log(filteredData)
+
+
   useEffect(() => {
     if (data) {
       setFilterData(data);
@@ -40,7 +43,7 @@ export default function AnimeResults({ data }: AnimeResultsProps) {
         <GokuIcon />
         <h1 className="text-xl font-light text-center text-gray-800 md:text-2xl">Complete list of animes</h1>
       </div>
-     <FilterOptions selectGeneroRef={selectGeneroRef} selectTypeRef={selectTypeRef} setFilterData={setFilterData} data={data}/>
+      <FilterOptions selectGeneroRef={selectGeneroRef} selectTypeRef={selectTypeRef} setFilterData={setFilterData} data={data} />
       {count < 1 && ( //para validar ningún resultado 
         <div className="flex flex-col items-center justify-center px-2 py-10 text-gray-800">
           <main className="flex flex-col items-center justify-center py-10 border border-gray-500 shadow-2xl cursor-default w-fit rounded-xl">
@@ -56,7 +59,8 @@ export default function AnimeResults({ data }: AnimeResultsProps) {
         <section className="px-1 py-4">
           <main className="flex flex-wrap flex-1 w-full px-2 md:px-28 lg:justify-center gap-y-8 gap-x-4 lg:gap-y-4">
             {data !== null && filteredData !== null && filteredData.map((dato: { imageUrl: string, title: string, id: number, tipo: string }, index: number) => (
-              <Link key={index} to={`/anime/${dato.id}`}>
+              <Link key={index} to={`/${['TV', 'Movie', 'Special', 'PV', 'ONA', 'OVA'].includes(dato.tipo) ? 'anime' : 'manga'
+                }/${dato.id}`}>
                 <article className="flex flex-col gap-y-2">
                   <section className="bg-gray-200 rounded-md">
                     <div className="flex items-end m-1 bg-cover rounded-md hover:scale-95 hover:duration-100 h-60 w-44" style={{ backgroundImage: `url(${dato.imageUrl})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>

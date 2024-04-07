@@ -2,6 +2,7 @@ import React from "react";
 import { FilledHeart } from "../icons/FilledHeart";
 import { Check } from "../icons/Check";
 import Info from "./Info";
+import AdditionalInfo from "./AdditionalInfo";
 
 interface PosterProps{
   titles: string,
@@ -10,10 +11,13 @@ interface PosterProps{
   year: number,
   episodes: number, 
   duration: string,
-  rating: string
+  rating: string,
+  external: string
+  streaming: string
+  producers: string
 }
 
-export default function Poster({titles, image, status, year, episodes, duration, rating}: PosterProps){
+export default function Poster({titles, image, status, year, episodes, duration, rating, external, streaming, producers}: PosterProps){
   return(
     <main className="pt-20 lg:pl-40">
     <div className="relative w-64 p-1 bg-white rounded-md">
@@ -31,6 +35,7 @@ export default function Poster({titles, image, status, year, episodes, duration,
       </button>
     </section> */}
     <Info rating={rating} year={year} titles={titles} duration={duration} episodes={episodes}/>
+    <AdditionalInfo streaming={streaming} producers={producers} external={external} />
   </main>
   )
 }

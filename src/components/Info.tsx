@@ -1,6 +1,6 @@
 import React from "react";
 
-interface InfoProps{
+interface InfoProps {
   year: number,
   titles: any,
   episodes: number,
@@ -8,20 +8,24 @@ interface InfoProps{
   rating: string,
 }
 
-export default function Info({year, titles, episodes, duration, rating}: InfoProps){
-  return(
+export default function Info({ year, titles, episodes, duration, rating }: InfoProps) {
+  return (
     <section className="text-gray-900 max-w-64">
-    <h1 className="pt-4 mb-4 text-lg font-bold text-gray-800 uppercase">Information</h1>
-    <h1 className="py-1"><strong>Rating:</strong> {rating}</h1>
-    <h1 className="py-1"><strong>Year:</strong> {year}</h1>
-    <h2 className="py-1"><strong>Episodes:</strong> {episodes}</h2>
-    <h2 className="py-1"><strong>Duration:</strong> {duration}</h2>
-    <h3  className="pt-4 mb-4 text-lg font-bold text-gray-800 uppercase">Titles </h3>
-    {titles && titles.map(( dato: {type: string, title: string}, index: number) => (
-      <article key={index}>
-        <p className="py-1"><strong>{dato.type}</strong>: {dato.title}</p>
-      </article>
-    ))}
+      <h1 className="pt-4 mb-2 text-lg font-bold text-gray-800 uppercase">Information</h1>
+      {rating && (<h1><strong>Rating:</strong> {rating}</h1>)}
+      {year && (<h1><strong>Year:</strong> {year}</h1>)}
+      {episodes && (<h2><strong>Episodes:</strong> {episodes}</h2>)}
+      {duration && (<h2><strong>Duration:</strong> {duration}</h2>)}
+      {rating && year && episodes && duration
+        ? ''
+        : <h1>Information no disponible</h1>
+      }
+      <h3 className="pt-4 mb-2 text-lg font-bold text-gray-800 uppercase">Titles </h3>
+      {titles && titles.map((dato: { type: string, title: string }, index: number) => (
+        <article key={index}>
+          <p><strong>{dato.type}</strong>: {dato.title}</p>
+        </article>
+      ))}
     </section>
   )
 }
