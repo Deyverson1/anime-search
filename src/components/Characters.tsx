@@ -2,21 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Down } from "../icons/Down";
 import { Up } from "../icons/Up";
-
 interface Character {
   characterName: string,
   characterImage: string
 }
-
 interface CharacterProps {
   type: string
 }
-
 export default function Characters({ type }: CharacterProps) {
   const [character, setCharacter] = useState<Character[]>([])
   const [showAll, setShow] = useState(false)
   const { id } = useParams()
-  console.log(character)
+  // console.log(character)
   useEffect(() => {
     const animeId = Number(id)
     // console.log(type, animeId)
@@ -45,7 +42,7 @@ export default function Characters({ type }: CharacterProps) {
     <>
       {character !== undefined && character && character !== null && Object.keys(character).length !== 0 && (
         <section>
-          <h1 className="mb-4 text-lg font-bold text-gray-800">Characters</h1>
+          <h1 className="pt-8 mb-4 text-lg font-bold text-gray-800">Characters</h1>
           <main className="flex flex-wrap justify-start gap-x-2 gap-y-4">
             {characterShow.map((dato, index) => (
               <article key={index} className="flex flex-col gap-1 w-fit">

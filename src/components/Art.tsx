@@ -2,55 +2,16 @@ import React from "react"
 import { useEffect, useState } from "react"
 import { Heart } from "../icons/Heart"
 import { FilledHeart } from "../icons/FilledHeart"
-
 interface SearchArtProps {
-  category: string,
-  amount: number,
-  title: string,
+  response: any,
+  handleLike: any
 }
-
-interface Response {
-  title: string,
-  image: string,
-  liked?: boolean
-}
-
-export default function SearchArt({category, amount, title}: SearchArtProps){
-
-  const [response, setResponse] = useState<Response | null>(null)
-
-  useEffect(() => {
-    fetch(`https://nekos.best/api/v2/${category}?amount=${amount}`)
-      .then(response => response.json())
-      .then(res => {
-        const data = res.results.map((dato: {url: string, artist_href: string, artist_name: string}) => ({
-          image: dato.url,
-          artist: dato.artist_href,
-          artistName: dato.artist_name
-        }))
-        setResponse(data)
-      })
-      .catch(error => console.error('New error in fetch NekoPic', error))
-  }, [])
-
-  function handleLike(index: number) {
-    setResponse(prevResponse => {
-      if(prevResponse === null){
-        return null
-      }
-      const updatedResponse: Response[] = [...prevResponse];
-      updatedResponse[index] = {
-        ...updatedResponse[index],
-        liked: !updatedResponse[index].liked
-      };
-      return updatedResponse;
-    }); 
-  }
-
-  return(
-    <main className="hidden lg:block">
+export default function Art({ response, handleLike }: SearchArtProps) {
+  return (
+    <main className="hidden pt-8 lg:block">
+      <h1 className="text-lg font-bold text-gray-800 uppercase">Art explore</h1>
       <section className="flex flex-col flex-wrap items-start justify-center gap-y-4">
-        {Array.isArray(response) && response !== null && response.length > 0 && response.map((data: {image: string, artistName: string, artist: string, liked: string}, index) => (
+        {Array.isArray(response) && response !== null && response.length > 0 && response.map((data: { image: string, artistName: string, artist: string, liked: string }, index) => (
           <article key={index} className="rounded-lg " style={{ backgroundColor: '' }}>
             <div className="text-black"><img src={data.image} className="w-56 h-56 rounded-lg" /></div>
             <div className="px-2 text-center">

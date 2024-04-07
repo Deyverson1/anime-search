@@ -2,7 +2,7 @@ import React from "react";
 import { FilledHeart } from "../icons/FilledHeart";
 import { Check } from "../icons/Check";
 import Info from "./Info";
-import AdditionalInfo from "./AdditionalInfo";
+import MoreInfo from "./MoreInfo";
 
 interface PosterProps{
   titles: string,
@@ -35,7 +35,7 @@ export default function Poster({titles, image, status, year, episodes, duration,
       </button>
     </section> */}
     <Info rating={rating} year={year} titles={titles} duration={duration} episodes={episodes}/>
-    <AdditionalInfo streaming={streaming} producers={producers} external={external} />
+    <MoreInfo streaming={streaming} producers={producers} external={external} />
   </main>
   )
 }

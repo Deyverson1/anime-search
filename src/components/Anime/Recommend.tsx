@@ -26,9 +26,7 @@ function Recommend() {
           ))
         }
       </section>
-      
     </section>
-
   )
 }
 export default Recommend;

@@ -1,10 +1,10 @@
 import React from "react";
-interface AdditionalInfo {
+interface MoreInfoProps {
   streaming: any,
   producers: any,
   external: any
 }
-export default function AdditionalInfo({ streaming, producers, external }: AdditionalInfo) {
+export default function MoreInfo({ streaming, producers, external }: MoreInfoProps) {
   return (
     <section className="text-black">
       {streaming !== null && streaming?.length > 0 && (

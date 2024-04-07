@@ -1,6 +1,5 @@
 import React from "react";
 import Rank from "./Rank";
-import AdditionalInfo from "./AdditionalInfo";
 import Characters from "./Characters";
 interface PrincipalCard {
   type: string, favorites: number, rank: number, trailer: string, score: number, members: number, popularity: number, genres: any, synopsis: string, background: string, scored_by: number,

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
-import { Filter } from "../../icons/Filter";
-import { Refresh } from "../../icons/Refresh";
-import { GokuIcon } from "../../icons/Goku";
-import { NotFound } from "../../icons/NotFound";
-import FilterOptions from "../FilterOptions";
+import { Filter } from "../icons/Filter";
+import { Refresh } from "../icons/Refresh";
+import { GokuIcon } from "../icons/Goku";
+import { NotFound } from "../icons/NotFound";
+import FilterOptions from "./FilterOptions";
 interface AnimeData {
   imageUrl: string;
   title: string;

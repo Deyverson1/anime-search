@@ -10,7 +10,6 @@ interface FilterProps{
 }
 
 export default function FilterOptions({selectGeneroRef, selectTypeRef, setFilterData, data}: FilterProps) {
-
   function handleFilter() {
     const valueType = selectTypeRef?.current?.value
     const valueGenre = selectGeneroRef?.current?.value

@@ -14,18 +14,15 @@ export default function Quote() {
   const [response, setResponse] = useState<Response | null>(null);
   const [quote, setQuote] = useState<Quote | null>(null);
   const [refresh, setRefresh] = useState(false);
-
   function handleRefresh() {
     setRefresh(!refresh);
   }
-
   useEffect(() => {
     fetch("https://animechan.xyz/api/random")
       .then((res) => res.json())
       .then((res) => setQuote(res))
       .catch((error) => console.error("Error fetching quotes:", error));
   }, [refresh]);
-
   useEffect(() => {
     if (!quote) return;
     if(quote && quote !== null && quote !== undefined){
@@ -45,17 +42,15 @@ export default function Quote() {
       );
     }
   }, [quote]);
-
   return (
     <section className="px-2 py-8 ">
-      <header className="flex items-center justify-between w-full px-4 pb-4 lg:pb-8 ">
-
+      <header className="flex items-center justify-center w-full px-4 pb-4 lg:pb-8 ">
         <div onClick={handleRefresh} className="flex items-end justify-end text-gray-800 cursor-pointer hover:text-orange-500">
           <Refresh />
         </div>
       </header>
       {quote !== null && response !== null && Array.isArray(response) && response.length > 0 && (
-        <section className="flex flex-wrap px-4 md:flex-nowrap gap-x-8">
+        <section className="flex flex-wrap justify-center px-4 md:flex-nowrap gap-x-8">
           <div>
             <h1 className="text-xl font-bold text-gray-800 ">{quote.character}</h1>
             <h2 className="text-yellow-600">{quote.anime}</h2>
@@ -76,8 +71,6 @@ export default function Quote() {
           </div>
         </section>
       )}
-
-
     </section>
   );
 }
