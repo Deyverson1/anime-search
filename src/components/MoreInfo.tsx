@@ -6,7 +6,7 @@ interface MoreInfoProps {
 }
 export default function MoreInfo({ streaming, producers, external }: MoreInfoProps) {
   return (
-    <section className="text-black">
+    <section className="flex flex-col justify-start text-black">
       {streaming !== null && streaming?.length > 0 && (
         <section className="w-full ">
           <h1 className="pt-8 mb-2 text-lg font-bold text-gray-800 uppercase">Streaming </h1>

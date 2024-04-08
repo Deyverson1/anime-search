@@ -10,7 +10,7 @@ interface InfoProps {
 
 export default function Info({ year, titles, episodes, duration, rating }: InfoProps) {
   return (
-    <section className="text-gray-900 max-w-64">
+    <section className="w-full text-gray-900 md:max-w-64">
       <h1 className="pt-4 mb-2 text-lg font-bold text-gray-800 uppercase">Information</h1>
       {rating && (<h1><strong>Rating:</strong> {rating}</h1>)}
       {year && (<h1><strong>Year:</strong> {year}</h1>)}

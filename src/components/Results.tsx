@@ -22,9 +22,6 @@ export default function AnimeResults({ data }: AnimeResultsProps) {
   const selectTypeRef = useRef<HTMLSelectElement>(null);
   const selectGeneroRef = useRef<HTMLSelectElement>(null);
 
-  console.log(filteredData)
-
-
   useEffect(() => {
     if (data) {
       setFilterData(data);

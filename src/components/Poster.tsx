@@ -21,11 +21,14 @@ interface PosterProps {
 
 export default function Poster({ type, titles, image, status, year, episodes, duration, rating, external, streaming, producers }: PosterProps) {
   return (
-    <main className="pt-20 lg:pl-40">
-      <div className="relative w-64 p-1 bg-white rounded-md">
-        <img src={image} alt={`Image from ${titles}`} className="z-50 w-64 rounded-md aspect-auto" />
+    <main className="w-full px-2 pt-20 md:w-auto lg:pl-40">
+      <div className="flex flex-col items-center justify-center">
+        <div className="relative w-64 p-1 bg-white rounded-md">
+          <img src={image} alt={`Image from ${titles}`} className="z-50 w-64 rounded-md aspect-auto" />
+        </div>
+        <p className="px-4 py-2 my-4 text-center uppercase bg-red-600 rounded-md w-fit">{status}</p>
       </div>
-      <p className="py-2 my-4 text-center uppercase bg-red-600 rounded-md">{status}</p>
+    
       {/* <section className="box-border flex justify-between flex-1 w-64 gap-x-4">
       <button className="flex items-center justify-center p-2 text-black bg-white rounded-md gap-x-2">
         <div className="p-1 bg-red-600 rounded-full"><FilledHeart /></div>
