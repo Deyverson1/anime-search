@@ -22,7 +22,7 @@ export default function Relations({ relation }: RelationsProps) {
               <div key={index}>
                 <h1><strong>Type:</strong><span className={`ml-2 text-gray-100 px-2 rounded-full bg-${data.type === 'manga' ? 'orange-500' : data.type === 'anime' ? 'blue-500' : ''}`}>{data.type}</span></h1>
                 <Link to={`/${data.type}/${data.mal_id}`}>
-                  <h1 className="font-bold">Name:<span className="ml-1 font-normal underline">{data.name}</span></h1>
+                  <h1 className="font-bold max-w-60">Name:<span className="ml-1 font-normal underline ">{data.name}</span></h1>
                 </Link>
               </div>
             ))}
