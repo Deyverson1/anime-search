@@ -15,24 +15,26 @@ export default function Characters({ type }: CharacterProps) {
   const { id } = useParams()
   // console.log(character)
   useEffect(() => {
-    const animeId = Number(id)
-    // console.log(type, animeId)
-    const apiId = `https://api.jikan.moe/v4/${type}/${animeId}/characters`
-    fetch(apiId)
-      .then(res => res.json())
-      .then(res => {
-        const dato = res.data
-        // console.log(dato)
-        const characterDetails = dato.map((dato: { character: any, name: string, images: any, webp: any, image_url: string }) => ({
-          characterName: dato?.character?.name,
-          characterImage: dato?.character?.images?.webp?.image_url
-        }
-        ))
-        setCharacter(characterDetails)
-      })
-      .catch(error => {
-        console.error('Error fetching AnimeDetails', error)
-      })
+    const fetchDataAfterDelay = () => {
+      const animeId = Number(id);
+      const apiId = `https://api.jikan.moe/v4/${type}/${animeId}/characters`;
+      fetch(apiId)
+        .then(res => res.json())
+        .then(res => {
+          const dato = res.data;
+          const characterDetails = dato.map((dato: { character: any, name: string, images: any, webp: any, image_url: string }) => ({
+            characterName: dato?.character?.name,
+            characterImage: dato?.character?.images?.webp?.image_url
+          }));
+          setCharacter(characterDetails);
+        })
+        .catch(error => {
+          console.error('Error fetching AnimeDetails', error);
+        });
+    };
+    const delayInMilliseconds = 1000;
+    const timeoutId = setTimeout(fetchDataAfterDelay, delayInMilliseconds);
+    return () => clearTimeout(timeoutId);
   }, [id])
   function handleShow() {
     setShow(!showAll)
@@ -42,7 +44,7 @@ export default function Characters({ type }: CharacterProps) {
     <>
       {character !== undefined && character && character !== null && Object.keys(character).length !== 0 && (
         <section>
-          <h1 className="pt-8 mb-4 text-lg font-bold text-gray-800">Characters</h1>
+          <h1 className="pt-2 mb-4 text-lg font-bold text-gray-800 uppercase">Characters</h1>
           <main className="flex flex-wrap justify-start gap-x-2 gap-y-4">
             {characterShow.map((dato, index) => (
               <article key={index} className="flex flex-col gap-1 w-fit">

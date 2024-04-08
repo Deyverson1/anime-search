@@ -14,7 +14,6 @@ interface AnimeDetailsProps {
 
 export default function Details({ data, type }: AnimeDetailsProps) {
   const [content, setContent] = useState<Content[]>([])
-  console.log(type)
   const { id } = useParams()
   useEffect(() => {
     const numberId = Number(id)

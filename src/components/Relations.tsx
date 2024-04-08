@@ -10,7 +10,7 @@ export default function Relations({ relation }: RelationsProps) {
   function handleShowRelation() {
     setShowAll(!showAll)
   }
-  const Relations = showAll ? relation : relation.slice(0, 2);
+  const Relations = showAll ? relation : relation.slice(0, 1);
   return (
     <section className="text-gray-800">
       <h1 className="pt-8 mb-2 text-lg font-bold text-gray-800 uppercase">Relations</h1>
@@ -20,7 +20,7 @@ export default function Relations({ relation }: RelationsProps) {
             {dato.relation && (<h1><strong>Relation:</strong> {dato.relation}</h1>)}
             {dato.entry && dato.entry.map((data: { type: string, name: string, mal_id: number }, index: number) => (
               <div key={index}>
-                <h1><strong>Type:</strong> {data.type}</h1>
+                <h1><strong>Type:</strong><span className={`ml-2 text-gray-100 px-2 rounded-full bg-${data.type === 'manga' ? 'orange-500' : data.type === 'anime' ? 'blue-500' : ''}`}>{data.type}</span></h1>
                 <Link to={`/${data.type}/${data.mal_id}`}>
                   <h1 className="font-bold">Name:<span className="ml-1 font-normal underline">{data.name}</span></h1>
                 </Link>
