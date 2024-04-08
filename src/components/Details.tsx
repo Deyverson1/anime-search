@@ -17,8 +17,8 @@ export default function Details({ data, type }: AnimeDetailsProps) {
   console.log(type)
   const { id } = useParams()
   useEffect(() => {
-    const animeId = Number(id)
-    const apiId = `https://api.jikan.moe/v4/${type}/${animeId}/full`
+    const numberId = Number(id)
+    const apiId = `https://api.jikan.moe/v4/${type}/${numberId}/full`
     fetch(apiId)
       .then(res => res.json())
       .then(res => {
@@ -44,7 +44,7 @@ export default function Details({ data, type }: AnimeDetailsProps) {
               : ''
             }
           </div>
-          <Poster rating={rating} streaming={streaming} producers={producers} external={external} duration={duration} episodes={episodes} titles={titles} image={image} status={status} year={year} />
+          <Poster type={type} rating={rating} streaming={streaming} producers={producers} external={external} duration={duration} episodes={episodes} titles={titles} image={image} status={status} year={year} />
           <section className="bottom-0 z-10 flex flex-col items-center px-2 lg:block">
             <div className="flex flex-wrap items-center gap-4 mt-8 lg:mt-60">
               <h1 className="max-w-xs text-xl text-black px-8 bg-[#e6edb7] rounded-full ">{title}</h1>
