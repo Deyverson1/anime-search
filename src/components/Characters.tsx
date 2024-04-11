@@ -57,9 +57,11 @@ export default function Characters({ type }: CharacterProps) {
           </main>
           <footer className="flex justify-center pt-8">
             <div className="flex justify-center cursor-pointer w-fit" onClick={handleShow}>
-              {showAll
-                ? <Up />
-                : <Down />
+              {character?.length > 16
+                ? showAll
+                  ? <Up />
+                  : <Down />
+                : ''
               }
             </div>
           </footer>

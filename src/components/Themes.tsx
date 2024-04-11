@@ -11,7 +11,6 @@ export default function Themes({ themes }: ThemesProps) {
   }
   const ThemesOpening = showAll ? themes?.openings : themes.openings?.slice(0, 5);
   const ThemesEnding = showAll ? themes?.endings : themes.endings?.slice(0, 5);
-
   return (
     <section className="py-5">
       {Themes && Themes !== null && (
@@ -30,10 +29,14 @@ export default function Themes({ themes }: ThemesProps) {
           </div>
           <section className="flex justify-center">
             <div onClick={handleShowRelation} className="flex justify-center cursor-pointer w-fit">
-              {showAll
-                ? <Up />
-                : <Down />
-              }
+              {themes?.openings?.length > 5 || themes?.endings?.length > 5
+                ?
+                showAll
+                  ? <Up />
+                  : <Down />
+
+                : ''}
+
             </div>
           </section>
         </main>
