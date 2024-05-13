@@ -1,3 +1,6 @@
+/* This code snippet is a React functional component called `Details` that displays detailed
+information about a specific anime based on the provided `data` and `type` props. Here's a breakdown
+of what the code does: */
 import React, { useEffect, useState } from "react";
 import Poster from "./Poster";
 import { useParams } from "react-router-dom";

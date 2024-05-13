@@ -1,3 +1,11 @@
+/**
+ * The App component sets up routes for different pages in a React application, passing data and
+ * components accordingly.
+ * @returns The `App` component is being returned, which includes a `Router` component from
+ * react-router-dom with nested `Routes` and multiple `Route` components. Each `Route` component
+ * specifies a different path and renders corresponding components such as `Top`, `AnimeResults`,
+ * `Anime`, `Manga`, `HeaderContainer`, and `Footer`. The `App` component also uses `useState` to
+ */
 import React from "react"
 import '@fontsource-variable/onest';
 import { useState } from "react"

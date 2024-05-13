@@ -1,3 +1,11 @@
+/**
+ * The `HeaderContainer` function in TypeScript React fetches anime and manga data based on user input
+ * and combines them before setting the data using the provided `setData` function.
+ * @param {HeaderProps}  - The code you provided is a React functional component called
+ * `HeaderContainer` that receives a prop `setData` of type `any`. Within this component, there is a
+ * `handleClick` function that is triggered when a button is clicked. This function fetches data from
+ * two different APIs (animeAPI and
+ */
 import React, { useRef } from "react";
 import Header from "../dashboard/Header";
 interface HeaderProps {

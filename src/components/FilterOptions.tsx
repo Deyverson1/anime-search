@@ -1,3 +1,13 @@
+/**
+ * The `FilterOptions` component in TypeScript React allows users to filter data based on genre and
+ * type, with options to refresh the results.
+ * @param {FilterProps}  - The `FilterOptions` component takes in the following parameters:
+ * @returns The `FilterOptions` component is returning a section element containing two select elements
+ * for filtering by genre and type, along with two buttons for applying the filter and refreshing the
+ * results. The `Filter` icon is displayed next to the Filter button, and the `Refresh` icon is
+ * displayed next to the Refresh button. The component also includes event handlers for handling the
+ * filter and refresh actions.
+ */
 import React from "react";
 import { Refresh } from "../icons/Refresh";
 import { Filter } from "../icons/Filter";

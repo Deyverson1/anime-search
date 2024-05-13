@@ -1,3 +1,11 @@
+/**
+ * The `Header` component in this TypeScript React code renders a navigation bar with a logo, search
+ * input field, and navigation links.
+ * @param {HomeProps}  - The `Header` component takes in three props:
+ * @returns The `Header` component is being returned. It is a functional component that renders a
+ * header section with a logo, navigation links, and a search form for searching Animes and Manga. The
+ * component takes in props `setData`, `handleClick`, and `input` as parameters.
+ */
 import React from "react";
 import { Link } from "react-router-dom";
 import { SearchSmall } from "../icons/SearchSmall";

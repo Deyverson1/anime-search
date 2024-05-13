@@ -1,3 +1,14 @@
+/**
+ * The Top component renders a webpage dedicated to exploring anime, manga, and art APIs with various
+ * sections such as TopManga, ArtContainer, TopAnimes, Recommend, and Quote.
+ * @param {TopProps}  - The code you provided is a React functional component named `Top` that receives
+ * a prop `data` of type `any`. Inside the component, it renders different sections including
+ * `TopManga`, `ArtContainer`, `TopAnimes`, `Recommend`, and `Quote` components.
+ * @returns The `Top` component is being returned, which is a functional component in React. It
+ * includes sections for displaying top manga, art container, a welcome message with links, top animes,
+ * recommendations, and a quote. The component takes a prop `data` and renders the content accordingly
+ * in a responsive layout using Tailwind CSS classes.
+ */
 import React from "react"
 import TopAnimes from "../components/Anime/TopAnimes"
 import Recommend from "../components/Anime/Recommend"

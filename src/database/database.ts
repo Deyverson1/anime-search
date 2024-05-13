@@ -1,3 +1,7 @@
+/* The `export const dataBase` is an array of objects containing information about various anime
+series. Each object represents a different anime and includes properties such as title, subTitle,
+image URL, color, and id. This data can be exported and used in other parts of the codebase to
+display information about these anime series. */
 export const dataBase = [
   {
     title: 'Shingeki no Kyoji ',

@@ -1,3 +1,7 @@
+/**
+ * This React component fetches and displays a list of characters from an API based on the provided
+ * type and anime ID, with an option to show more characters.
+ */
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Down } from "../icons/Down";

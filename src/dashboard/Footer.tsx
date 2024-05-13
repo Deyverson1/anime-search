@@ -1,3 +1,9 @@
+/**
+ * The Footer component in this TypeScript React code renders a footer section with a logo and the text
+ * "Animatic".
+ * @returns The Footer component is being returned, which contains a footer element with a Link
+ * component wrapping an SVG logo and a heading displaying the text "Animatic".
+ */
 import React from "react"
 import { Link } from "react-router-dom"
 export default function Footer() {

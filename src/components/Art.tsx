@@ -1,3 +1,5 @@
+/* This code snippet is a React component named `Art` that displays a list of art pieces. Here's a
+breakdown of what the code is doing: */
 import React from "react"
 import { useEffect, useState } from "react"
 import { Heart } from "../icons/Heart"

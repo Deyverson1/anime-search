@@ -1,3 +1,7 @@
+/**
+ * This TypeScript React function fetches data from multiple APIs, combines the results, and displays
+ * them in a component with the ability to like individual items.
+ */
 import React, { useEffect, useState } from "react";
 import Art from "../components/Art";
 interface Response {
