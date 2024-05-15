@@ -35,7 +35,7 @@ export default function Top({ data }: TopProps) {
         </div>
         <TopAnimes />
         <Recommend />
-        <Quote />
+        {/* <Quote /> */}
       </section>
     </article>
   )
