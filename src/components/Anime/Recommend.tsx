@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Recommend() {
   return (
     <section className="px-2 py-8 ">
-      <h1 className="pb-6 text-xl font-bold text-gray-800 uppercase ">Recommended</h1>
+      <h1 className="pb-6 text-xl font-bold text-center text-gray-800 uppercase ">Recommended</h1>
       <section className="flex flex-wrap justify-center flex-1 gap-y-8 lg:gap-y-8 gap-x-1 lg:gap-x-2">
         {
           dataBase.map(({ title, image, subTitle, id }) => (
