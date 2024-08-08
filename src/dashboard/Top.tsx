@@ -21,13 +21,13 @@ interface TopProps {
 
 export default function Top({ data }: TopProps) {
   return (
-    <article className="flex flex-col-reverse gap-0 lg:gap-20 lg:flex-row lg:px-20">
+    <article className="flex flex-col-reverse gap-0 lg:gap-20 lg:flex-row lg:px-16">
       <section>
         <TopManga />
         <ArtContainer />
       </section>
       <section>
-        <div className="p-4 m-2 mt-4 tracking-tighter text-center text-gray-800 bg-gray-300 rounded-lg text-md" role="alert">
+        <div className="p-4 m-2 mt-4 text-base tracking-tighter text-center text-gray-800 bg-gray-300 rounded-lg" role="alert">
           <span className="font-medium">Welcome to Anime Manga and Art Explorer!</span> Web page dedicated to the consumption of APIs by
           <a href="https://github.com/Deyverson1" target="blank"> <span className="text-orange-400 underline">@Deyverson</span></a>,
           for more information click

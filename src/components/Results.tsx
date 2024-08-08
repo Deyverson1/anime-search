@@ -54,12 +54,12 @@ export default function AnimeResults({ data }: AnimeResultsProps) {
       )}
       {data !== null && data !== undefined && data.length > 0 && (
         <section className="px-1 py-4">
-          <main className="flex flex-wrap flex-1 w-full px-2 md:px-28 lg:justify-center gap-y-8 gap-x-4 lg:gap-y-4">
+          <main className="flex flex-wrap flex-1 w-full px-2 md:px-18 lg:justify-center gap-y-8 gap-x-4 lg:gap-y-4">
             {data !== null && filteredData !== null && filteredData.map((dato: { imageUrl: string, title: string, id: number, tipo: string }, index: number) => (
               <Link key={index} to={`/${['TV', 'Movie', 'Special', 'PV', 'ONA', 'OVA'].includes(dato.tipo) ? 'anime' : 'manga'
                 }/${dato.id}`}>
                 <article className="flex flex-col gap-y-2">
-                  <section className="bg-gray-200 rounded-md">
+                  <section >
                     <div className="flex items-end m-1 bg-cover rounded-md hover:scale-95 hover:duration-100 h-60 w-44" style={{ backgroundImage: `url(${dato.imageUrl})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
                       {/* <img src={dato.imageUrl} alt="" className="p-1 duration-500 rounded-lg w-44 h-60 hover:scale-105" /> */}
                       {dato.tipo && dato.tipo.length > 0 && (

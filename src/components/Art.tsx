@@ -11,8 +11,8 @@ interface SearchArtProps {
 export default function Art({ response, handleLike }: SearchArtProps) {
   return (
     <main className="hidden pt-8 lg:block">
-      <h1 className="text-lg font-bold text-gray-800 uppercase">Art explore</h1>
-      <section className="flex flex-col flex-wrap items-start justify-center gap-y-4">
+      <h1 className="pb-4 text-lg font-bold text-center text-gray-800 uppercase">Art explore</h1>
+      <section className="flex flex-col flex-wrap items-center justify-center gap-y-4">
         {Array.isArray(response) && response !== null && response.length > 0 && response.map((data: { image: string, artistName: string, artist: string, liked: string }, index) => (
           <article key={index} className="rounded-lg " style={{ backgroundColor: '' }}>
             <div className="text-black"><img src={data.image} className="w-56 h-56 rounded-lg" /></div>
