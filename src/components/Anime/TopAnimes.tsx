@@ -28,7 +28,7 @@ export default function TopAnimes() {
   return (
     <main className="px-0 pt-10 lg:px-0">
       <h1 className="pb-4 text-xl font-bold text-center text-gray-800 uppercase ">Top Anime </h1>
-      <section className="flex flex-col items-center justify-center">
+      <section className="flex flex-col items-center justify-center m-2 md:m-0">
         <section className="flex flex-col flex-1 gap-x-4 gap-y-8 lg:flex-row lg:flex-wrap lg:justify-center ">
           {topAnime.map((data, index) => (
             <Link key={index} to={`/anime/${data.id}`}>
