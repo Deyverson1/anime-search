@@ -1,3 +1,7 @@
+/* This code snippet is a TypeScript React component called `TopManga`. It fetches data from an API
+endpoint (`https://api.jikan.moe/v4/top/manga`), processes the data, and then displays a list of top
+manga titles with some styling. */
+
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 interface Manga {

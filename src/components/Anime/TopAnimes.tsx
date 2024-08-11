@@ -32,7 +32,7 @@ export default function TopAnimes() {
         <section className="flex flex-col flex-1 gap-x-4 gap-y-8 lg:flex-row lg:flex-wrap lg:justify-center ">
           {topAnime.map((data, index) => (
             <Link key={index} to={`/anime/${data.id}`}>
-              <article className="flex items-center gap-4 lg:flex-col gap-y-1">
+              <article className="flex items-center gap-4 lg:flex-col gap-y-1 md:group-hover:-translate-y-1">
                 <img className="object-cover transition-transform rounded-full w-14 h-14 lg:rounded-lg lg:w-full lg:h-56 md:group-hover:scale-1 hover:md:scale-105" src={data.image} alt="" />
                 <h1 className="w-10/12 text-sm font-bold text-gray-800 lg:text-center lg:min-w-48 lg:max-w-48">{data.title}</h1>
               </article>
