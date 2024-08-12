@@ -1,7 +1,10 @@
+/* This code is a React functional component called `AnimeResults` that displays a list of anime data.
+Here's a breakdown of what the code does: */
+
 import React, { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
-import { Filter } from "../icons/Filter";
-import { Refresh } from "../icons/Refresh";
+// import { Filter } from "../icons/Filter";
+// import { Refresh } from "../icons/Refresh";
 import { GokuIcon } from "../icons/Goku";
 import { NotFound } from "../icons/NotFound";
 import FilterOptions from "./FilterOptions";

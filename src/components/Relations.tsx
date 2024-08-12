@@ -1,3 +1,7 @@
+/**
+ * This React component called Relations displays relation data with an option to show all relations or
+ * just a subset, along with type and name information for each entry.
+ */
 import React, { useState } from "react";
 import { Up } from "../icons/Up";
 import { Down } from "../icons/Down";

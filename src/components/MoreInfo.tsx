@@ -1,3 +1,6 @@
+/* This code snippet is a React functional component named `MoreInfo` that takes in three props:
+`streaming`, `producers`, and `external`. */
+
 import React from "react";
 interface MoreInfoProps {
   streaming: any,

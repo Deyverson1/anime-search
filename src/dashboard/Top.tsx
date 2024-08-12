@@ -13,7 +13,7 @@ import React from "react"
 import TopAnimes from "../components/Anime/TopAnimes"
 import Recommend from "../components/Anime/Recommend"
 import TopManga from "../components/Manga/TopManga"
-import Quote from "../components/Quote"
+// import Quote from "../components/Quote"
 import ArtContainer from "../Container/ArtContainer"
 interface TopProps {
   data: any

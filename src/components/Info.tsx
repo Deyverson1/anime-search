@@ -1,3 +1,6 @@
+/* This code snippet is a React functional component named `Info` that displays information about a
+show or series. Here's a breakdown of what it does: */
+
 import React from "react";
 
 interface InfoProps {

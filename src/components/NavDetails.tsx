@@ -1,3 +1,16 @@
+/**
+ * The `NavDetails` function in this TypeScript React component handles search functionality for anime
+ * titles using an API, displaying search results dynamically as the user types in the search input
+ * field.
+ * @param {NavProps}  - The code you provided is a React component called `NavDetails` that represents
+ * a navigation bar with search functionality for an anime website. Here's a breakdown of the key
+ * points in the code:
+ * @returns The `NavDetails` component is being returned. It consists of a section containing a header
+ * with a logo and navigation links, a search bar, and a list of search results displayed as clickable
+ * articles with anime titles and images. The search results are fetched from an API based on the user
+ * input in the search bar.
+ */
+
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { SearchIcon } from "../icons/Search";

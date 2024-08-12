@@ -1,3 +1,8 @@
+/**
+ * This React component fetches a random anime quote, displays the character, anime, and quote, and
+ * fetches and displays an image of the character using two different APIs.
+ */
+
 import React, { useEffect, useState } from "react";
 import { Refresh } from "../icons/Refresh";
 
@@ -25,21 +30,21 @@ export default function Quote() {
   }, [refresh]);
   useEffect(() => {
     if (!quote) return;
-    if(quote && quote !== null && quote !== undefined){
+    if (quote && quote !== null && quote !== undefined) {
       fetch(`https://api.jikan.moe/v4/characters?q=${quote.character}`)
-      .then((response) => response.json())
-      .then((response) => {
-        if(response.data && response.data !== undefined){
-          const characters = response.data.map((info: { name: string, images: any, jpg: string, image_url: string }) => ({
-            title: info.name,
-            image: info.images.jpg.image_url
-          }));
-          setResponse(characters);
-        }
-      })
-      .catch((error) =>
-        console.error("Error fetching character details:", error)
-      );
+        .then((response) => response.json())
+        .then((response) => {
+          if (response.data && response.data !== undefined) {
+            const characters = response.data.map((info: { name: string, images: any, jpg: string, image_url: string }) => ({
+              title: info.name,
+              image: info.images.jpg.image_url
+            }));
+            setResponse(characters);
+          }
+        })
+        .catch((error) =>
+          console.error("Error fetching character details:", error)
+        );
     }
   }, [quote]);
   return (

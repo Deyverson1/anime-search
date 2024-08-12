@@ -1,3 +1,7 @@
+/**
+ * This function displays a list of openings and endings from a given set of themes, with the option to
+ * show more or fewer items based on user interaction.
+ */
 import React, { useState } from "react";
 import { Up } from "../icons/Up";
 import { Down } from "../icons/Down";
@@ -34,9 +38,7 @@ export default function Themes({ themes }: ThemesProps) {
                 showAll
                   ? <Up />
                   : <Down />
-
                 : ''}
-
             </div>
           </section>
         </main>
