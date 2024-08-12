@@ -1,3 +1,8 @@
+/**
+ * The SearchIcon component returns an SVG icon for a search functionality.
+ * @returns The SearchIcon component is being returned, which is an SVG element representing a search
+ * icon.
+ */
 import React from "react"
 export const SearchIcon = () => {
   return(

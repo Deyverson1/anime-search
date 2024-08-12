@@ -1,3 +1,8 @@
+/**
+ * The `NotFound` function returns a SVG component displaying a custom illustration for a 404 error
+ * page.
+ * @returns A SVG element with various paths and shapes is being returned.
+ */
 import React from "react";
 export const NotFound = () => {
   return (

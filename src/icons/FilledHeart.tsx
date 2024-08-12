@@ -1,3 +1,8 @@
+/**
+ * The function `FilledHeart` returns an SVG icon of a filled heart.
+ * @returns A React functional component named FilledHeart is being returned. It renders an SVG icon of
+ * a filled heart using the Tabler Icons library.
+ */
 import React from "react"
 export const FilledHeart = () => {
   return(

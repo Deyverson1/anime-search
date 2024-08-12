@@ -1,3 +1,7 @@
+/**
+ * The function "Refresh" returns an SVG icon for a refresh button in a React component.
+ * @returns The code is returning an SVG element representing a refresh icon.
+ */
 import React from "react"
 export const Refresh = () => {
   return(

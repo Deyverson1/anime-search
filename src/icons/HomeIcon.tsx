@@ -1,3 +1,8 @@
+/**
+ * The HomeIcon component is a React functional component that renders an SVG icon representing a home
+ * with specific styling.
+ * @returns The HomeIcon component is being returned, which is an SVG icon representing a home symbol.
+ */
 import React from "react";
 export const HomeIcon = () => {
   return(

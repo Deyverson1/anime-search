@@ -1,3 +1,7 @@
+/**
+ * The function `Star` returns an SVG icon of a filled star.
+ * @returns The `Star` component is returning an SVG element representing a filled star icon.
+ */
 import React from "react";
 export const Star = () => {
   return(

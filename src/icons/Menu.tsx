@@ -1,3 +1,9 @@
+/**
+ * The above code defines two React functional components, MenuHorizontal and MenuVertical, that render
+ * SVG icons for horizontal and vertical menus respectively.
+ * @returns Two React functional components, `MenuHorizontal` and `MenuVertical`, each returning an SVG
+ * element with specific attributes and paths for displaying horizontal and vertical menu icons.
+ */
 import React from "react"
 export const MenuHorizontal = () => {
   return(

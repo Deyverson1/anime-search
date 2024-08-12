@@ -1,3 +1,9 @@
+/**
+ * The Exit component is a React functional component that renders an SVG icon resembling an 'x'
+ * symbol.
+ * @returns A React functional component named Exit is being returned. It renders an SVG icon with a
+ * close or exit symbol.
+ */
 import React from "react"
 export const Exit = () => {
   return(

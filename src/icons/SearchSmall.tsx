@@ -1,3 +1,6 @@
+/**
+ * The SearchSmall component is a React functional component that renders an SVG search icon.
+ */
 import React from "react";
 export const SearchSmall = () => {
   return (

@@ -1,3 +1,8 @@
+/**
+ * The Check component is a React functional component that renders an SVG icon of a checkmark.
+ * @returns A React functional component named Check is being returned. It renders an SVG icon of a
+ * checkmark using the Tabler icon set.
+ */
 import React from "react";
 export const Check = () => {
   return(

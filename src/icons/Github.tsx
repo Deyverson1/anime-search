@@ -1,3 +1,7 @@
+/**
+ * The function `Github` returns an SVG component representing the GitHub logo.
+ * @returns The code is returning an SVG element representing the GitHub logo.
+ */
 import React from "react"
 export const Github = () => {
   return(

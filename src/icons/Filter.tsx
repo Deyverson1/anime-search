@@ -1,3 +1,7 @@
+/**
+ * The Filter component is a React functional component that renders an SVG icon for filtering data.
+ * @returns The Filter component is being returned, which renders an SVG icon for a filter.
+ */
 import React from "react";
 export const Filter = () => {
   return(

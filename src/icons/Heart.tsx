@@ -1,3 +1,9 @@
+/**
+ * The function `Heart` returns an SVG icon of a heart with a specific design.
+ * @returns A React functional component named Heart is being returned. It renders an SVG element
+ * representing a heart icon with specific attributes such as width, height, viewBox, stroke width,
+ * stroke color, and path data defining the shape of the heart icon.
+ */
 import React from "react"
 export const Heart = () => {
   return(

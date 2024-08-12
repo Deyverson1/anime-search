@@ -1,3 +1,8 @@
+/**
+ * The function `Up` returns an SVG icon of a chevron pointing upwards.
+ * @returns A React functional component named `Up` is being returned. It renders an SVG icon of an
+ * upward-pointing chevron using the Tabler Icons library.
+ */
 import React from "react";
 export const Up = () => {
   return (

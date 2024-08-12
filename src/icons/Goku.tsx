@@ -1,3 +1,8 @@
+/**
+ * The GokuIcon function returns an SVG icon of a character named Goku.
+ * @returns The `GokuIcon` component is being returned, which is an SVG element representing an icon of
+ * the character Goku.
+ */
 import React from "react"
 export const GokuIcon = () => {
   return (

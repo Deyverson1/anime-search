@@ -1,3 +1,8 @@
+/**
+ * The function `Down` returns an SVG icon of a downward-pointing chevron.
+ * @returns A React functional component named Down is being returned. It renders an SVG icon of a
+ * downward-pointing chevron using the Tabler Icons library.
+ */
 import React from "react";
 export const Down = () => {
   return (
