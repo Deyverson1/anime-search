@@ -6,9 +6,9 @@ import { dataBase } from "../../database/database";
 import { Link } from "react-router-dom";
 function Recommend() {
   return (
-    <section className="flex flex-col py-8 mt-10">
+    <section className="flex flex-col py-8 mt-2 md:mt-10">
       <h1 className="pb-6 text-xl font-bold text-center text-gray-800 uppercase ">Recommended</h1>
-      <section className="flex flex-col flex-1 m-2 md:m-auto md: gap-y-8 lg:gap-y-8 gap-x-1 lg:gap-x-2">
+      <section className="flex flex-col flex-1 m-2 md:flex-wrap md:flex-row md:m-auto md: gap-y-8 lg:gap-y-8 gap-x-1 lg:gap-x-2">
         {
           dataBase.map(({ title, image, subTitle, id }) => (
             <Link key={title} to={`/anime/${id}`}>
